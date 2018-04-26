@@ -70,3 +70,8 @@ begin
 			end if;
 		end if;
 	end process p_counter;
+
+	v_sync_o <= s_v_sync;
+	h_sync_o <= s_h_sync;
+	rgb_o <= s_rgb;
+end vga_control_architecture;
