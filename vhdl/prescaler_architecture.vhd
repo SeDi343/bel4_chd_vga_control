@@ -25,7 +25,7 @@ begin
 	p_s25mhz : process(clk_i, reset_i)
 	begin
 		if reset_i = '1' then
-			-- Seset System
+			-- Reset System
 			s_25mhz <= '0';
 			s_enctr <= "000";
 

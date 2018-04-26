@@ -30,6 +30,7 @@ architecture vga_control_architecture of vga_control_entity is
 
 	signal s_enctr_h_sync			: std_logic_vector(9 downto 0);		-- Counter for H-Sync
 	signal s_enctr_v_sync			: std_logic_vector(9 downto 0);		-- Counter for V-Sync
+	signal s_pixel_enable			: std_logic;											-- Internal Pixel-Enable Signal
 
 begin
 
@@ -38,4 +39,34 @@ begin
 	-----------------------------------------------------------------------------
 	p_counter : process(clk_i, reset_i)
 	begin
-		
+		if reset_i = '1' then
+			-- Reset System
+			s_pixel_enable <= '0';
+			s_enctr_h_sync <= "0000000000";
+			s_enctr_v_sync <= "0000000000";
+			s_h_sync <= '0';
+			s_v_sync <= '0';
+			s_rgb <= "000000000000";
+
+		elsif clk_i'event and clk_i = '1' then
+			-- Get Pixel Enable State from Prescaler
+			-- and write it to the internal pixel enable signal
+			s_pixel_enable <= en_25mhz_i;
+
+			-- If Pixel Enable equals 1
+			if s_pixel_enable = '1' then
+				s_enctr_h_sync <= unsigned(s_enctr_h_sync) + '1';
+				s_enctr_v_sync <= unsigned(s_enctr_v_sync) + '1';
+
+				-- If Counter for H-Sync equals the Whole Line
+				if s_enctr_h_sync = H_WHOLE_LINE then
+					s_enctr_h_sync <= "0000000000";
+				end if;
+
+				-- If Counter for V-Sync equals the Whole Line
+				if s_enctr_v_sync = V_WHOLE_LINE then
+					s_enctr_v_sync <= "0000000000";
+				end if;
+			end if;
+		end if;
+	end process p_counter;
