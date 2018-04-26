@@ -8,7 +8,7 @@
 
 library IEEE;
 use IEEE.std_logic_1164.all;
-use IEE.std_logic_arith.all;
+use IEEE.std_logic_arith.all;
 
 architecture vga_control_architecture of vga_control_entity is
 	-- Constants for the h-ysnc timing
