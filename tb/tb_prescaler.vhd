@@ -27,16 +27,16 @@ architecture tb_prescaler_architecture of tb_prescaler_entity is
 begin
 
 	clk_i <= not(clk_i) after 5 ns;					-- 100MHz (10ns)
-	reset <= '0' after 20 ns;
+	reset_i <= '0' after 20 ns;
 
 	i_prescaler_entity : prescaler_entity
 	port map
 		(	clk_i				=> clk_i,
 			reset_i			=> reset_i,
-			en_25mhz_o	=> en_25_mhz_o);
+			en_25mhz_o	=> en_25mhz_o);
 
 	p_test : process
 	begin
-		wait for 500 ns;
+		wait for 30 ns;
 	end process p_test;
 end tb_prescaler_architecture;

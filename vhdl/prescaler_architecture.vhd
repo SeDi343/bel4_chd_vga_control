@@ -12,9 +12,9 @@ use IEEE.std_logic_arith.all;
 
 architecture prescaler_architecture of prescaler_entity is
 	-- Constant value for the 25MHz enable signal for the counter
-	constant C_ENCOUNTVAL	: std_logic_vector(2 downto 0) := "100";
+	constant C_ENCOUNTVAL	: std_logic_vector(1 downto 0) := "11";
 
-	signal s_enctr				: std_logic_vector(2 downto 0);	-- Counter
+	signal s_enctr				: std_logic_vector(1 downto 0);	-- Counter
 	signal s_25mhz				: std_logic;										-- 25MHz enable signal
 
 begin
@@ -27,7 +27,7 @@ begin
 		if reset_i = '1' then
 			-- Reset System
 			s_25mhz <= '0';
-			s_enctr <= "000";
+			s_enctr <= "00";
 
 		elsif clk_i'event and clk_i = '1' then
 			-- Enable Signal is inactive per default
@@ -41,7 +41,7 @@ begin
 			-- If counter equals the constant value / Else increment the counter
 			if s_enctr = C_ENCOUNTVAL then
 				s_25mhz <= '1';
-				s_enctr <= "000";
+				s_enctr <= "00";
 
 			else
 				s_enctr <= unsigned(s_enctr) + '1';
@@ -50,3 +50,4 @@ begin
 	end process p_s25mhz;
 
 en_25mhz_o <= s_25mhz;
+end prescaler_architecture;
