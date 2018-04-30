@@ -6,6 +6,9 @@
 -- File : vga_control_architecture.vhd                                       --
 -------------------------------------------------------------------------------
 
+-- Comment: may use the en_25mhz_i signal directly instead of writing it into an internal
+--          Signal
+
 library IEEE;
 use IEEE.std_logic_1164.all;
 use IEEE.std_logic_arith.all;
@@ -44,8 +47,6 @@ begin
 			s_pixel_enable <= '0';
 			s_enctr_h_sync <= "0000000000";
 			s_enctr_v_sync <= "0000000000";
-			s_h_sync <= '0';
-			s_v_sync <= '0';
 			s_rgb <= "000000000000";
 
 		elsif clk_i'event and clk_i = '1' then
@@ -55,12 +56,15 @@ begin
 
 			-- If Pixel Enable equals 1
 			if s_pixel_enable = '1' then
+				-- Increment the H-Sync Counter with every pixel enable signal
 				s_enctr_h_sync <= unsigned(s_enctr_h_sync) + '1';
-				s_enctr_v_sync <= unsigned(s_enctr_v_sync) + '1';
 
 				-- If Counter for H-Sync equals the Whole Line
 				if s_enctr_h_sync = H_WHOLE_LINE then
 					s_enctr_h_sync <= "0000000000";
+
+					-- Increment the V-Sync Counter with every new line of the H-Sync Counter
+					s_enctr_v_sync <= unsigned(s_enctr_v_sync) + '1';
 				end if;
 
 				-- If Counter for V-Sync equals the Whole Line
@@ -70,6 +74,50 @@ begin
 			end if;
 		end if;
 	end process p_counter;
+
+	-----------------------------------------------------------------------------
+	-- Timing for H-Sync
+	-----------------------------------------------------------------------------
+	p_h_sync_timing : process(clk_i, reset_i)
+	begin
+		if reset_i = '1' then
+			-- Reset System
+			s_h_sync <= '0';
+
+		elsif clk_i'event and clk_i = '1' then
+			-- If Counter for H-Sync equals the Start
+			if s_enctr_h_sync = "0000000000" then
+				s_h_sync <= '1';
+			end if;
+
+			-- If Counter for H-Sync equals the H-Sync Pulse
+			if s_enctr_h_sync = H_H_SYNC_PULSE then
+				s_h_sync <= '0';
+			end if;
+		end if;
+	end process p_h_sync_timing;
+
+	-----------------------------------------------------------------------------
+	-- Timing for V-Sync
+	-----------------------------------------------------------------------------
+	p_v_sync_timing : process(clk_i, reset_i)
+	begin
+		if reset_i = '1' then
+			-- Reset System
+			s_v_sync <= '0';
+
+			elsif clk_i'event and clk_i = '1' then
+				-- If Counter for V-Sync equals the Start
+				if s_enctr_v_sync = "0000000000" then
+					s_v_sync <= '1';
+				end if;
+
+				-- If Counter for V-Sync equals the V-Sync Pulse
+				if s_enctr_v_sync = V_V_SYNC_PULSE then
+					s_v_sync <= '0';
+				end if;
+			end if;
+		end process p_v_sync_timing;
 
 	v_sync_o <= s_v_sync;
 	h_sync_o <= s_h_sync;
