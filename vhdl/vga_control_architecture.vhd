@@ -8,6 +8,8 @@
 
 -- Comment: may use the en_25mhz_i signal directly instead of writing it into an internal
 --          Signal
+--          Send signal to pattern generator or memory control to send rgb pixel values
+--          after H_FRONT_PORCH, H_H_SYNC_PULSE, H_BACK_PORCH
 
 library IEEE;
 use IEEE.std_logic_1164.all;
@@ -29,7 +31,7 @@ architecture vga_control_architecture of vga_control_entity is
 
 	signal s_h_sync						: std_logic;											-- H-Sync Signal
 	signal s_v_sync						: std_logic;											-- V-Sync Signal
-	signal s_rgb							: std_logic_vector(11 downto 0);	-- Signal RGB
+	--signal s_rgb							: std_logic_vector(11 downto 0);	-- Signal RGB
 
 	signal s_enctr_h_sync			: std_logic_vector(9 downto 0);		-- Counter for H-Sync
 	signal s_enctr_v_sync			: std_logic_vector(9 downto 0);		-- Counter for V-Sync
@@ -47,7 +49,6 @@ begin
 			s_pixel_enable <= '0';
 			s_enctr_h_sync <= "0000000000";
 			s_enctr_v_sync <= "0000000000";
-			s_rgb <= "000000000000";
 
 		elsif clk_i'event and clk_i = '1' then
 			-- Get Pixel Enable State from Prescaler
@@ -106,20 +107,20 @@ begin
 			-- Reset System
 			s_v_sync <= '0';
 
-			elsif clk_i'event and clk_i = '1' then
-				-- If Counter for V-Sync equals the Start
-				if s_enctr_v_sync = "0000000000" then
-					s_v_sync <= '1';
-				end if;
-
-				-- If Counter for V-Sync equals the V-Sync Pulse
-				if s_enctr_v_sync = V_V_SYNC_PULSE then
-					s_v_sync <= '0';
-				end if;
+		elsif clk_i'event and clk_i = '1' then
+			-- If Counter for V-Sync equals the Start
+			if s_enctr_v_sync = "0000000000" then
+				s_v_sync <= '1';
 			end if;
-		end process p_v_sync_timing;
 
-	v_sync_o <= s_v_sync;
-	h_sync_o <= s_h_sync;
-	rgb_o <= s_rgb;
+			-- If Counter for V-Sync equals the V-Sync Pulse
+			if s_enctr_v_sync = V_V_SYNC_PULSE then
+				s_v_sync <= '0';
+			end if;
+		end if;
+	end process p_v_sync_timing;
+
+	v_sync_o <= s_v_sync;	-- Write V-Sync to output
+	h_sync_o <= s_h_sync;	-- Write H-Sync to output
+	rgb_o <= rgb_i;				-- Write RGB inputs to output
 end vga_control_architecture;

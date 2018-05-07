@@ -49,5 +49,5 @@ begin
 		end if;
 	end process p_s25mhz;
 
-	en_25mhz_o <= s_25mhz;
+	en_25mhz_o <= s_25mhz;	-- Write 25MHz enable signal to output
 end prescaler_architecture;
