@@ -22,11 +22,11 @@ architecture patterngenerator_1_architecture of patterngenerator_1_entity is
 	signal s_colorcntr		: integer := 1;			-- Color Counter Signal
 	signal s_rowcntr			: integer := 1;			-- Row Counter Signal
 
-	signal s_state				: t_state : NEWPAGE;
+	signal s_state				: t_state := NEWPAGE;
 
-	signal s_rgb_enable		: std_logic;										-- Internal RGB Stream Enable Signal
-	signal s_en_25mhz			: std_logic;										-- Internal Pixel Enable Signal
-	signal s_rgb					: std_logic_vector(11 downto 0)	-- Internal RGB Signal
+	signal s_rgb_enable		: std_logic;											-- Internal RGB Stream Enable Signal
+	signal s_en_25mhz			: std_logic;											-- Internal Pixel Enable Signal
+	signal s_rgb					: std_logic_vector(11 downto 0);	-- Internal RGB Signal
 
 begin
 
@@ -38,9 +38,9 @@ begin
 	begin
 		if reset_i = '1' then
 			-- Reset System
-			s_linectr <= '1';
-			s_colorcntr <= '1';
-			s_rowcntr <= '1';
+			s_linecntr <= 1;
+			s_colorcntr <= 1;
+			s_rowcntr <= 1;
 			s_rgb <= "000000000000";
 			s_state <= NEWPAGE;
 
@@ -53,7 +53,7 @@ begin
 
 						-- If visible area is reached
 						if s_rgb_enable = '1' then
-							s_linectr <= 1;
+							s_linecntr <= 1;
 							s_colorcntr <= 1;
 							s_rowcntr <= 1;
 							s_state <= RED;
@@ -62,7 +62,7 @@ begin
 					-- Red Color
 					when RED =>
 						s_rgb <= "111100000000";
-						s_linecntr <= s_linectr + 1;
+						s_linecntr <= s_linecntr + 1;
 
 						-- If red color has 40 pixels
 						if s_colorcntr = C_COLOR then
@@ -95,7 +95,7 @@ begin
 						-- If blue color has 40 pixels
 						if s_colorcntr = C_COLOR then
 							s_colorcntr <= 1;
-							s_rgb = "000000000000";
+							s_rgb <= "000000000000";
 							s_state <= BLACK;
 						else
 							s_colorcntr <= s_colorcntr + 1;

@@ -12,7 +12,7 @@ use IEEE.std_logic_arith.all;
 
 architecture io_logic_architecture of io_logic_entity is
 	--constant C_ENCOUNTVAL		: std_logic_vector(16 downto 0) := "11000011010100000";	-- 1kHz
-	constant C_ENCOUNTVAL		: std_logic_vector(17 downto 0) := "110000110101000000"	-- 500Hz
+	constant C_ENCOUNTVAL		: std_logic_vector(17 downto 0) := "110000110101000000";	-- 500Hz
 
 	signal s_enctr		: std_logic_vector(17 downto 0);	-- Counter for Debouncing
 	signal s_500hzen	: std_logic;											-- 500Hz enable Signal

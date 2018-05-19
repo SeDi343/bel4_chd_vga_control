@@ -8,10 +8,71 @@ z2
 !i10f 100
 cModel Technology
 Z0 d/home/fedora/Dokumente/Schule/Fachhochschule/Semester_4/Chip_Design/Project_VGA_Controller/code/msim
-Eprescaler_entity
-w1524759826
+Eio_logic_entity
+w1526729796
 Z1 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
 Z2 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+R0
+8../vhdl/io_logic_entity.vhd
+F../vhdl/io_logic_entity.vhd
+l0
+L12
+Vo?zeoRlWgQ6c=T`N8SgRI3
+!s100 2Tz^k@a];9XQjghUM=CjK2
+Z3 OV;C;10.5b;63
+32
+Z4 !s110 1526737869
+!i10b 1
+Z5 !s108 1526737869.000000
+!s90 -reportprogress|300|../vhdl/io_logic_entity.vhd|
+!s107 ../vhdl/io_logic_entity.vhd|
+!i113 1
+Z6 tExplicit 1 CvgOpt 0
+Aio_logic_architecture
+Z7 w1526737689
+Z8 DEx4 work 15 io_logic_entity 0 22 o?zeoRlWgQ6c=T`N8SgRI3
+Z9 DPx4 ieee 15 std_logic_arith 0 22 [G314=:2zXJ`VORJe1J@Z1
+R1
+R2
+Z10 8../vhdl/io_logic_architecture.vhd
+Z11 F../vhdl/io_logic_architecture.vhd
+l22
+L13
+Z12 VSLeQ]SNc03>]8KHBjY@5D0
+Z13 !s100 RaFU9eQggA@;C9mbOk80O1
+R3
+32
+R4
+!i10b 1
+R5
+Z14 !s90 -reportprogress|300|../vhdl/io_logic_architecture.vhd|
+!s107 ../vhdl/io_logic_architecture.vhd|
+!i113 1
+R6
+Epatterngenerator_1_entity
+w1526736361
+R1
+R2
+R0
+8../vhdl/patterngenerator_1_entity.vhd
+F../vhdl/patterngenerator_1_entity.vhd
+l0
+L12
+V>dXJiAHbZ^ECCJH23Do;K2
+!s100 ]o`g2JQOkPl[VjB6d_V2A3
+R3
+32
+!s110 1526737824
+!i10b 1
+!s108 1526737824.000000
+!s90 -reportprogress|300|../vhdl/patterngenerator_1_entity.vhd|
+!s107 ../vhdl/patterngenerator_1_entity.vhd|
+!i113 1
+R6
+Eprescaler_entity
+w1524759826
+R1
+R2
 R0
 8../vhdl/prescaler_entity.vhd
 F../vhdl/prescaler_entity.vhd
@@ -19,19 +80,19 @@ l0
 L12
 V5:kGoI:`zKO9hHJXOAcBh2
 !s100 GDa=HJ<6F0kM_N3PLlk@f3
-Z3 OV;C;10.5b;63
+R3
 32
-Z4 !s110 1524771581
+Z15 !s110 1524771581
 !i10b 1
-Z5 !s108 1524771581.000000
+Z16 !s108 1524771581.000000
 !s90 -reportprogress|300|../vhdl/prescaler_entity.vhd|
 !s107 ../vhdl/prescaler_entity.vhd|
 !i113 1
-Z6 tExplicit 1 CvgOpt 0
+R6
 Aprescaler_architecture
 w1524771560
 DEx4 work 16 prescaler_entity 0 22 5:kGoI:`zKO9hHJXOAcBh2
-Z7 DPx4 ieee 15 std_logic_arith 0 22 [G314=:2zXJ`VORJe1J@Z1
+R9
 R1
 R2
 8../vhdl/prescaler_architecture.vhd
@@ -42,36 +103,36 @@ VMnAMTPVoXMW`h]K3Fzn6j1
 !s100 HXPXYga>Q@J5lN_Udm@nI1
 R3
 32
-R4
+R15
 !i10b 1
-R5
+R16
 !s90 -reportprogress|300|../vhdl/prescaler_architecture.vhd|
 !s107 ../vhdl/prescaler_architecture.vhd|
 !i113 1
 R6
 Etb_prescaler_entity
-Z8 w1524765120
-Z9 DPx4 ieee 11 numeric_std 0 22 :ASDNFgHXf_ih3J@9F3Ze1
+Z17 w1524765120
+Z18 DPx4 ieee 11 numeric_std 0 22 :ASDNFgHXf_ih3J@9F3Ze1
 R1
 R2
 R0
-Z10 8../tb/tb_prescaler.vhd
-Z11 F../tb/tb_prescaler.vhd
+Z19 8../tb/tb_prescaler.vhd
+Z20 F../tb/tb_prescaler.vhd
 l0
 L13
 VDMB];mGV8<i>L76I_CX=;3
 !s100 B3LkQ:D4OL3P5Q4;YXiQ;3
 R3
 32
-R4
+R15
 !i10b 1
-R5
-Z12 !s90 -reportprogress|300|../tb/tb_prescaler.vhd|
-Z13 !s107 ../tb/tb_prescaler.vhd|
+R16
+Z21 !s90 -reportprogress|300|../tb/tb_prescaler.vhd|
+Z22 !s107 ../tb/tb_prescaler.vhd|
 !i113 1
 R6
 Atb_prescaler_architecture
-R9
+R18
 R1
 R2
 DEx4 work 19 tb_prescaler_entity 0 22 DMB];mGV8<i>L76I_CX=;3
@@ -81,50 +142,50 @@ Vc7_QoRUa6[0342c?5ZZ]51
 !s100 ^=CB>Wo2?>SVeL2L>Q>UY1
 R3
 32
-R4
+R15
 !i10b 1
-R5
-R12
-R13
+R16
+R21
+R22
 !i113 1
 R6
 Etb_vga_control_entity
-Z14 w1526735609
-R9
+Z23 w1526735609
+R18
 R1
 R2
 R0
-Z15 8../tb/tb_vga_control.vhd
-Z16 F../tb/tb_vga_control.vhd
+Z24 8../tb/tb_vga_control.vhd
+Z25 F../tb/tb_vga_control.vhd
 l0
 L13
 V]08U:T=P:zU`0TzNM82IC0
 !s100 kdIgF2H^95QhNS1SmLmNQ0
 R3
 32
-Z17 !s110 1526735625
+Z26 !s110 1526735625
 !i10b 1
-Z18 !s108 1526735625.000000
-Z19 !s90 -reportprogress|300|../tb/tb_vga_control.vhd|
-Z20 !s107 ../tb/tb_vga_control.vhd|
+Z27 !s108 1526735625.000000
+Z28 !s90 -reportprogress|300|../tb/tb_vga_control.vhd|
+Z29 !s107 ../tb/tb_vga_control.vhd|
 !i113 1
 R6
 Atb_vga_control_architecture
-R9
+R18
 R1
 R2
-Z21 DEx4 work 21 tb_vga_control_entity 0 22 ]08U:T=P:zU`0TzNM82IC0
+DEx4 work 21 tb_vga_control_entity 0 22 ]08U:T=P:zU`0TzNM82IC0
 l37
 L16
 VHNKo6<83lHYzz_b<K4kN^3
 !s100 j[Ee35lFz;dcTITNlEgLo0
 R3
 32
-R17
+R26
 !i10b 1
-R18
-R19
-R20
+R27
+R28
+R29
 !i113 1
 R6
 Evga_control_entity
@@ -140,9 +201,9 @@ V`E0W@Tn9^h?DiZjamn2T:1
 !s100 hWbboIKbK:P0P3S>o^P592
 R3
 32
-R17
+R26
 !i10b 1
-R18
+R27
 !s90 -reportprogress|300|../vhdl/vga_control_entity.vhd|
 !s107 ../vhdl/vga_control_entity.vhd|
 !i113 1
@@ -150,7 +211,7 @@ R6
 Avga_control_architecture
 w1526734793
 DEx4 work 18 vga_control_entity 0 22 `E0W@Tn9^h?DiZjamn2T:1
-R7
+R9
 R1
 R2
 8../vhdl/vga_control_architecture.vhd
@@ -161,9 +222,9 @@ VUR>HT>0[alW:QO=LWlZZz3
 !s100 RgkPNUWL490gf;zLGGL[j2
 R3
 32
-R17
+R26
 !i10b 1
-R18
+R27
 !s90 -reportprogress|300|../vhdl/vga_control_architecture.vhd|
 !s107 ../vhdl/vga_control_architecture.vhd|
 !i113 1

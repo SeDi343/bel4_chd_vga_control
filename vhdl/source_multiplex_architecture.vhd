@@ -12,12 +12,14 @@ use IEEE.std_logic_arith.all;
 
 architecture source_multiplexer_architecture of source_multiplexer_entity is
 	signal s_rgb		: std_logic_vector(11 downto 0);	-- Internal Signal for the RGB
-	signal s_ss_sel	: std_logic_vector(2 downto 0);		-- Switch signal (from IO Logic)
+	signal s_ss_sel	: std_logic_vector(2 downto 0);		-- Switch Signal
+	signal s_ss_pb	: std_logic_vector(3 downto 0);		-- Push Button Signal
 
 begin
 
-	-- Debounced Switch Signal received from IO Logic
+	-- Debounced Switch and Push Button Signal received from IO Logic
 	s_ss_sel <= swsync_i;
+	s_ss_pb <= pbsync_i;
 
 	-----------------------------------------------------------------------------
 	-- Use one RGB Source for Output
