@@ -15,12 +15,14 @@ architecture patterngenerator_2_architecture of patterngenerator_2_entity is
 	type t_state is (NEWPAGE, RED, GREEN, BLUE, BLACK, NEWLINE); -- States for Pattern
 
 	constant C_LINE				: integer := 640;		-- 640 pixels per line
-	constant C_COLOR			: integer := 40;		-- 40 pixels per color
+	constant C_COLORLINE	: integer := 64;		-- 64 pixels per color
 	constant C_ROW				: integer := 480;		-- 480 rows per page
+	constant C_COLORROW		: integer := 48;		-- 48 pixels per color
 
-	signal s_linecntr			: integer := 1;			-- Line Counter Signal
-	signal s_colorcntr		: integer := 1;			-- Color Counter Signal
-	signal s_rowcntr			: integer := 1;			-- Row Counter Signal
+	signal s_linecntr				: integer := 1;			-- Line Counter Signal
+	signal s_colorlinecntr	: integer := 1;			-- Color Line Counter Signal
+	signal s_rowcntr				: integer := 1;			-- Row Counter Signal
+	signal s_colorrowcntr		: integer := 1;			-- Color Row Counter Signal
 
 	signal s_state				: t_state := NEWPAGE;
 
@@ -39,7 +41,7 @@ begin
 		if reset_i = '1' then
 			-- Reset System
 			s_linecntr <= 1;
-			s_colorcntr <= 1;
+			s_colorlinecntr <= 1;
 			s_rowcntr <= 1;
 			s_rgb <= "000000000000";
 			s_state <= NEWPAGE;
@@ -54,7 +56,7 @@ begin
 						-- If visible area is reached
 						if s_rgb_enable = '1' then
 							s_linecntr <= 1;
-							s_colorcntr <= 1;
+							s_colorlinecntr <= 1;
 							s_rowcntr <= 1;
 							s_state <= RED;
 						end if;
@@ -65,12 +67,12 @@ begin
 						s_linecntr <= s_linecntr + 1;
 
 						-- If red color has 40 pixels
-						if s_colorcntr = C_COLOR then
-							s_colorcntr <= 1;
+						if s_colorlinecntr = C_COLOR then
+							s_colorlinecntr <= 1;
 							s_rgb <= "000011110000";
 							s_state <= GREEN;
 						else
-							s_colorcntr <= s_colorcntr + 1;
+						s_colorlinecntr <= s_colorlinecntr + 1;
 						end if;
 
 					-- Green Color
@@ -79,12 +81,12 @@ begin
 						s_linecntr <= s_linecntr + 1;
 
 						-- If green color has 40 pixels
-						if s_colorcntr = C_COLOR then
-							s_colorcntr <= 1;
+						if s_colorlinecntr = C_COLOR then
+							s_colorlinecntr <= 1;
 							s_rgb <= "000000001111";
 							s_state <= BLUE;
 						else
-							s_colorcntr <= s_colorcntr + 1;
+						s_colorlinecntr <= s_colorlinecntr + 1;
 						end if;
 
 					-- Blue Color
@@ -93,12 +95,12 @@ begin
 						s_linecntr <= s_linecntr + 1;
 
 						-- If blue color has 40 pixels
-						if s_colorcntr = C_COLOR then
-							s_colorcntr <= 1;
+						if s_colorlinecntr = C_COLOR then
+							s_colorlinecntr <= 1;
 							s_rgb <= "000000000000";
 							s_state <= BLACK;
 						else
-							s_colorcntr <= s_colorcntr + 1;
+						s_colorlinecntr <= s_colorlinecntr + 1;
 						end if;
 
 					-- Black Color
@@ -116,19 +118,19 @@ begin
 							s_state <= NEWPAGE;
 
 						-- If Color Counter reached 40
-						elsif s_colorcntr = C_COLOR then
-							s_colorcntr <= 1;
+						elsif s_colorlinecntr = C_COLOR then
+							s_colorlinecntr <= 1;
 							s_rgb <= "111100000000";
 							s_state <= RED;
 						else
-							s_colorcntr <= s_colorcntr + 1;
+						s_colorlinecntr <= s_colorlinecntr + 1;
 						end if;
 
 					-- New Line
 					when NEWLINE =>
 						s_rgb <= "111100000000";
 						s_linecntr <= 1;
-						s_colorcntr <= 1;
+						s_colorlinecntr <= 1;
 						s_rowcntr <= s_rowcntr + 1;
 
 						if s_rgb_enable = '1' then

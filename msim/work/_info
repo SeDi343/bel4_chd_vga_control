@@ -9,9 +9,9 @@ z2
 cModel Technology
 Z0 d/home/fedora/Dokumente/Schule/Fachhochschule/Semester_4/Chip_Design/Project_VGA_Controller/code/msim
 Eio_logic_entity
-w1526729796
-Z1 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
-Z2 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+Z1 w1526729796
+Z2 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z3 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
 R0
 8../vhdl/io_logic_entity.vhd
 F../vhdl/io_logic_entity.vhd
@@ -19,40 +19,40 @@ l0
 L12
 Vo?zeoRlWgQ6c=T`N8SgRI3
 !s100 2Tz^k@a];9XQjghUM=CjK2
-Z3 OV;C;10.5b;63
+Z4 OV;C;10.5b;63
 32
-Z4 !s110 1526737869
+!s110 1526739940
 !i10b 1
-Z5 !s108 1526737869.000000
+!s108 1526739940.000000
 !s90 -reportprogress|300|../vhdl/io_logic_entity.vhd|
 !s107 ../vhdl/io_logic_entity.vhd|
 !i113 1
-Z6 tExplicit 1 CvgOpt 0
+Z5 tExplicit 1 CvgOpt 0
 Aio_logic_architecture
-w1526737689
+w1526739883
 DEx4 work 15 io_logic_entity 0 22 o?zeoRlWgQ6c=T`N8SgRI3
-Z7 DPx4 ieee 15 std_logic_arith 0 22 [G314=:2zXJ`VORJe1J@Z1
-R1
+Z6 DPx4 ieee 15 std_logic_arith 0 22 [G314=:2zXJ`VORJe1J@Z1
 R2
+R3
 8../vhdl/io_logic_architecture.vhd
 F../vhdl/io_logic_architecture.vhd
 l22
 L13
 VSLeQ]SNc03>]8KHBjY@5D0
 !s100 RaFU9eQggA@;C9mbOk80O1
-R3
-32
 R4
+32
+!s110 1526739941
 !i10b 1
-R5
+!s108 1526739941.000000
 !s90 -reportprogress|300|../vhdl/io_logic_architecture.vhd|
 !s107 ../vhdl/io_logic_architecture.vhd|
 !i113 1
-R6
+R5
 Epatterngenerator_1_entity
 w1526736361
-R1
 R2
+R3
 R0
 8../vhdl/patterngenerator_1_entity.vhd
 F../vhdl/patterngenerator_1_entity.vhd
@@ -60,138 +60,161 @@ l0
 L12
 V>dXJiAHbZ^ECCJH23Do;K2
 !s100 ]o`g2JQOkPl[VjB6d_V2A3
-R3
+R4
 32
-!s110 1526737824
+Z7 !s110 1526739944
 !i10b 1
-!s108 1526737824.000000
+Z8 !s108 1526739944.000000
 !s90 -reportprogress|300|../vhdl/patterngenerator_1_entity.vhd|
 !s107 ../vhdl/patterngenerator_1_entity.vhd|
 !i113 1
+R5
+Apatterngenerator_1_architecture
+w1526737865
+DEx4 work 25 patterngenerator_1_entity 0 22 >dXJiAHbZ^ECCJH23Do;K2
+Z9 DPx4 ieee 11 numeric_std 0 22 :ASDNFgHXf_ih3J@9F3Ze1
 R6
+DPx4 ieee 18 std_logic_unsigned 0 22 ;eZjO2D4ZDz<]0>8AL<ne1
+R2
+R3
+8../vhdl/patterngenerator_1_architecture.vhd
+F../vhdl/patterngenerator_1_architecture.vhd
+l31
+L14
+V9UJTmUVab2TB2@@=d=F];3
+!s100 _>lW`SYmB[d<0zH7i`ocH3
+R4
+32
+R7
+!i10b 1
+R8
+!s90 -reportprogress|300|../vhdl/patterngenerator_1_architecture.vhd|
+!s107 ../vhdl/patterngenerator_1_architecture.vhd|
+!i113 1
+R5
 Eprescaler_entity
-w1524759826
 R1
 R2
+R3
 R0
 8../vhdl/prescaler_entity.vhd
 F../vhdl/prescaler_entity.vhd
 l0
 L12
-V5:kGoI:`zKO9hHJXOAcBh2
-!s100 GDa=HJ<6F0kM_N3PLlk@f3
-R3
+V]OC9m`jUYz<SES`RE_fBD1
+!s100 X9hM5R2zGhgAI_Z2n^RfO3
+R4
 32
-Z8 !s110 1524771581
+!s110 1526739934
 !i10b 1
-Z9 !s108 1524771581.000000
+Z10 !s108 1526739934.000000
 !s90 -reportprogress|300|../vhdl/prescaler_entity.vhd|
 !s107 ../vhdl/prescaler_entity.vhd|
 !i113 1
-R6
+R5
 Aprescaler_architecture
-w1524771560
-DEx4 work 16 prescaler_entity 0 22 5:kGoI:`zKO9hHJXOAcBh2
-R7
-R1
+w1526739896
+DEx4 work 16 prescaler_entity 0 22 ]OC9m`jUYz<SES`RE_fBD1
+R6
 R2
+R3
 8../vhdl/prescaler_architecture.vhd
 F../vhdl/prescaler_architecture.vhd
 l20
 L13
-VMnAMTPVoXMW`h]K3Fzn6j1
-!s100 HXPXYga>Q@J5lN_Udm@nI1
-R3
+V3[AmkzCIzn]^g2X0hQ`WP1
+!s100 kG2NQX6Ve2XQXFPzjUjQI0
+R4
 32
-R8
+Z11 !s110 1526739935
 !i10b 1
-R9
+R10
 !s90 -reportprogress|300|../vhdl/prescaler_architecture.vhd|
 !s107 ../vhdl/prescaler_architecture.vhd|
 !i113 1
-R6
+R5
 Etb_prescaler_entity
-Z10 w1524765120
-Z11 DPx4 ieee 11 numeric_std 0 22 :ASDNFgHXf_ih3J@9F3Ze1
-R1
+Z12 w1524765120
+R9
 R2
+R3
 R0
-Z12 8../tb/tb_prescaler.vhd
-Z13 F../tb/tb_prescaler.vhd
+Z13 8../tb/tb_prescaler.vhd
+Z14 F../tb/tb_prescaler.vhd
 l0
 L13
 VDMB];mGV8<i>L76I_CX=;3
 !s100 B3LkQ:D4OL3P5Q4;YXiQ;3
-R3
+R4
 32
-R8
-!i10b 1
-R9
-Z14 !s90 -reportprogress|300|../tb/tb_prescaler.vhd|
-Z15 !s107 ../tb/tb_prescaler.vhd|
-!i113 1
-R6
-Atb_prescaler_architecture
 R11
-R1
+!i10b 1
+Z15 !s108 1526739935.000000
+Z16 !s90 -reportprogress|300|../tb/tb_prescaler.vhd|
+Z17 !s107 ../tb/tb_prescaler.vhd|
+!i113 1
+R5
+Atb_prescaler_architecture
+R9
 R2
+R3
 DEx4 work 19 tb_prescaler_entity 0 22 DMB];mGV8<i>L76I_CX=;3
 l27
 L16
 Vc7_QoRUa6[0342c?5ZZ]51
 !s100 ^=CB>Wo2?>SVeL2L>Q>UY1
-R3
+R4
 32
-R8
-!i10b 1
-R9
-R14
-R15
-!i113 1
-R6
-Etb_vga_control_entity
-Z16 w1526735609
 R11
-R1
+!i10b 1
+R15
+R16
+R17
+!i113 1
+R5
+Etb_vga_control_entity
+Z18 w1526735609
+R9
 R2
+R3
 R0
-Z17 8../tb/tb_vga_control.vhd
-Z18 F../tb/tb_vga_control.vhd
+Z19 8../tb/tb_vga_control.vhd
+Z20 F../tb/tb_vga_control.vhd
 l0
 L13
 V]08U:T=P:zU`0TzNM82IC0
 !s100 kdIgF2H^95QhNS1SmLmNQ0
-R3
+R4
 32
-Z19 !s110 1526738355
+Z21 !s110 1526739948
 !i10b 1
-Z20 !s108 1526738355.000000
-Z21 !s90 -reportprogress|300|../tb/tb_vga_control.vhd|
-Z22 !s107 ../tb/tb_vga_control.vhd|
+Z22 !s108 1526739948.000000
+Z23 !s90 -reportprogress|300|../tb/tb_vga_control.vhd|
+Z24 !s107 ../tb/tb_vga_control.vhd|
 !i113 1
-R6
+R5
 Atb_vga_control_architecture
-R11
-R1
+R9
 R2
-Z23 DEx4 work 21 tb_vga_control_entity 0 22 ]08U:T=P:zU`0TzNM82IC0
+R3
+Z25 DEx4 work 21 tb_vga_control_entity 0 22 ]08U:T=P:zU`0TzNM82IC0
 l37
 L16
-Z24 VHNKo6<83lHYzz_b<K4kN^3
-Z25 !s100 j[Ee35lFz;dcTITNlEgLo0
-R3
+Z26 VHNKo6<83lHYzz_b<K4kN^3
+Z27 !s100 j[Ee35lFz;dcTITNlEgLo0
+R4
 32
-R19
-!i10b 1
-R20
 R21
+!i10b 1
 R22
+R23
+R24
 !i113 1
-R6
+R5
 Evga_control_entity
-Z26 w1526736434
-R1
+w1526736434
 R2
+R3
 R0
 8../vhdl/vga_control_entity.vhd
 F../vhdl/vga_control_entity.vhd
@@ -199,32 +222,33 @@ l0
 L12
 V`E0W@Tn9^h?DiZjamn2T:1
 !s100 hWbboIKbK:P0P3S>o^P592
-R3
+R4
 32
-R19
+R21
 !i10b 1
-R20
+R22
 !s90 -reportprogress|300|../vhdl/vga_control_entity.vhd|
 !s107 ../vhdl/vga_control_entity.vhd|
 !i113 1
-R6
+R5
 Avga_control_architecture
+w1526739891
 DEx4 work 18 vga_control_entity 0 22 `E0W@Tn9^h?DiZjamn2T:1
-R7
-R1
+R6
 R2
+R3
 8../vhdl/vga_control_architecture.vhd
 F../vhdl/vga_control_architecture.vhd
 l41
 L18
 VUR>HT>0[alW:QO=LWlZZz3
 !s100 RgkPNUWL490gf;zLGGL[j2
-R3
+R4
 32
-R19
+R21
 !i10b 1
-R20
+R22
 !s90 -reportprogress|300|../vhdl/vga_control_architecture.vhd|
 !s107 ../vhdl/vga_control_architecture.vhd|
 !i113 1
-R6
+R5
