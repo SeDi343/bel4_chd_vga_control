@@ -16,7 +16,7 @@ architecture io_logic_architecture of io_logic_entity is
 
 	signal s_enctr		: std_logic_vector(17 downto 0);	-- Counter for Debouncing
 	signal s_500hzen	: std_logic;											-- 500Hz enable Signal
-	signal swsync			: std_logic_vector(1 downto 0);		-- Debounced Switches signal
+	signal swsync			: std_logic_vector(2 downto 0);		-- Debounced Switches signal
 	signal pbsync			: std_logic_vector(3 downto 0);		-- Debounced push buttions signal
 
 begin
@@ -56,7 +56,7 @@ begin
 	begin
 		if reset_i = '1' then
 			-- Reset System
-			swsync <= "00";
+			swsync <= "000";
 			pbsync <= "0000";
 
 		elsif clk_i'event and clk_i = '1' then

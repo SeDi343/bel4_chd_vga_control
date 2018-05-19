@@ -7,9 +7,9 @@
 -------------------------------------------------------------------------------
 
 -- Comment: may use the en_25mhz_i signal directly instead of writing it into an internal
+--          Counters start at 1 going to 800 instead of 0 to 799
 --          Signal
---          Send signal to pattern generator or memory control to send rgb pixel values
---          after H_FRONT_PORCH, H_H_SYNC_PULSE, H_BACK_PORCH
+--          p_rgb_enable Verwende möglicherweise kein clocking 
 
 library IEEE;
 use IEEE.std_logic_1164.all;
@@ -32,6 +32,7 @@ architecture vga_control_architecture of vga_control_entity is
 	signal s_h_sync						: std_logic;											-- H-Sync Signal
 	signal s_v_sync						: std_logic;											-- V-Sync Signal
 	--signal s_rgb							: std_logic_vector(11 downto 0);	-- Signal RGB
+	signal s_rgb_enable				: std_logic;											-- RGB Enable Signal for Pattern and Memory
 
 	signal s_enctr_h_sync			: std_logic_vector(9 downto 0);		-- Counter for H-Sync
 	signal s_enctr_v_sync			: std_logic_vector(9 downto 0);		-- Counter for V-Sync
@@ -47,8 +48,8 @@ begin
 		if reset_i = '1' then
 			-- Reset System
 			s_pixel_enable <= '0';
-			s_enctr_h_sync <= "0000000000";
-			s_enctr_v_sync <= "0000000000";
+			s_enctr_h_sync <= "0000000001";
+			s_enctr_v_sync <= "0000000001";
 
 		elsif clk_i'event and clk_i = '1' then
 			-- Get Pixel Enable State from Prescaler
@@ -62,7 +63,7 @@ begin
 
 				-- If Counter for H-Sync equals the Whole Line
 				if s_enctr_h_sync = H_WHOLE_LINE then
-					s_enctr_h_sync <= "0000000000";
+					s_enctr_h_sync <= "0000000001";
 
 					-- Increment the V-Sync Counter with every new line of the H-Sync Counter
 					s_enctr_v_sync <= unsigned(s_enctr_v_sync) + '1';
@@ -70,7 +71,7 @@ begin
 
 				-- If Counter for V-Sync equals the Whole Line
 				if s_enctr_v_sync = V_WHOLE_LINE then
-					s_enctr_v_sync <= "0000000000";
+					s_enctr_v_sync <= "0000000001";
 				end if;
 			end if;
 		end if;
@@ -87,7 +88,7 @@ begin
 
 		elsif clk_i'event and clk_i = '1' then
 			-- If Counter for H-Sync equals the Start
-			if s_enctr_h_sync = "0000000000" then
+			if s_enctr_h_sync = "0000000001" then
 				s_h_sync <= '1';
 			end if;
 
@@ -109,7 +110,7 @@ begin
 
 		elsif clk_i'event and clk_i = '1' then
 			-- If Counter for V-Sync equals the Start
-			if s_enctr_v_sync = "0000000000" then
+			if s_enctr_v_sync = "0000000001" then
 				s_v_sync <= '1';
 			end if;
 
@@ -120,7 +121,31 @@ begin
 		end if;
 	end process p_v_sync_timing;
 
-	v_sync_o <= s_v_sync;	-- Write V-Sync to output
-	h_sync_o <= s_h_sync;	-- Write H-Sync to output
-	rgb_o <= rgb_i;				-- Write RGB inputs to output
+	-----------------------------------------------------------------------------
+	-- RGB Enable Signal for Pattern and Memory
+	-----------------------------------------------------------------------------
+	p_rgb_enable : process(clk_i, reset_i)
+	begin
+		if reset = '1' then
+			-- Reset System
+			s_rgb_enable <= '0';
+
+		elsif clk_i'event and clk_i = '1' then
+			-- RGB Enable always 0
+			s_rgb_enable <= '0';
+
+			-- If Counter for V-Sync euqlas the V-Sync Visible area
+			if s_enctr_v_sync >= (V_V_SYNC_PULSE + V_BACK_PORCH) and s_enctr_v_sync < (V_WHOLE_LINE - V_FRONT_PORCH) then
+				-- If Counter for H-Sync euqls the H-Sync Visible area
+				if s_enctr_h_sync >= (H_H_SYNC_PULSE + H_BACK_PORCH) and s_enctr_h_sync < (H_WHOLE_LINE - H_FRONT_PORCH) then
+					s_rgb_enable <= '1';
+				end if;
+			end if;
+		end if;
+	end process p_rgb_enable;
+
+	v_sync_o <= s_v_sync;					-- Write V-Sync to output
+	h_sync_o <= s_h_sync;					-- Write H-Sync to output
+	rgb_o <= rgb_i;								-- Write RGB inputs to output
+	rgb_enable_o <= s_rgb_enable;	-- Write RGB Enable to output
 end vga_control_architecture;
