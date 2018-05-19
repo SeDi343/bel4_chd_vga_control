@@ -1,4 +1,4 @@
-#Project: VGA Controller
+# Project: VGA Controller
 ## Introduction
 19.02.2018
 

@@ -29,7 +29,7 @@ begin
 		if reset_i = '1' then
 			-- Reset System
 			s_500hzen <= '0';
-			s_enctr <= "000000000000000000";
+			s_enctr <= "000000000000000001";
 
 		elsif clk_i'event and clk_i = '1' then
 			-- Enable signal is inactive per default
@@ -42,7 +42,7 @@ begin
 			-- If counter equals the requested value else increment the counter
 			if s_enctr = C_ENCOUNTVAL then
 				s_500hzen <= '1';
-				s_enctr <= "000000000000000000";
+				s_enctr <= "000000000000000001";
 			else
 				s_enctr <= unsigned(s_enctr) + '1';
 			end if;

@@ -15,19 +15,24 @@ end tb_vga_control_entity;
 
 architecture tb_vga_control_architecture of tb_vga_control_entity is
 	component vga_control_entity
-	port(	clk_i				: in std_logic;												-- System Clock (100MHz)
-				reset_i			: in std_logic;												-- Asynchronous reset (BTNC)
-				en_25mhz_i	: in std_logic;												-- Pixel Enable (25MHz) from Prescaler
-				rgb_i				: in std_logic_vector(11 downto 0);		-- RGB Colour from Source Multiplexer
-				rgb_o				: out std_logic_vector(11 downto 0);	-- RGB Color to VGA with sync
-				h_sync_o		: out std_logic;											-- H-Sync
-				v_sync_o		: out std_logic);											-- V-Sync
+	port(	clk_i					: in std_logic;												-- System Clock (100MHz)
+				reset_i				: in std_logic;												-- Asynchronous reset (BTNC)
+				en_25mhz_i		: in std_logic;												-- Pixel Enable (25MHz) from Prescaler
+				rgb_i					: in std_logic_vector(11 downto 0);		-- RGB Colour from Source Multiplexer
+				rgb_o					: out std_logic_vector(11 downto 0);	-- RGB Color to VGA with sync
+				h_sync_o			: out std_logic;											-- H-Sync
+				v_sync_o			: out std_logic;											-- V-Sync
+				rgb_enable_o	: out std_logic);											-- Pixel-Enable Signal
 	end component;
 
 	signal clk_i				: std_logic := '0';
 	signal reset_i			: std_logic := '1';
 	signal en_25mhz_i		: std_logic := '0';
 	signal rgb_i				: std_logic_vector(11 downto 0) := "111111111111";
+	signal rgb_o				: std_logic_vector(11 downto 0);
+	signal h_sync_o			: std_logic;
+	signal v_sync_o			: std_logic;
+	signal rgb_enable_o	: std_logic;
 
 begin
 
@@ -36,13 +41,20 @@ begin
 
 	i_vga_control_entity : vga_control_entity
 	port map
-	(	clk_i 			=> clk_i,
-		reset_i			=> reset_i,
-		en_25mhz_i	=> en_25mhz_i,
-		rgb_i				=> rgb_i);
+	(	clk_i 				=> clk_i,
+		reset_i				=> reset_i,
+		en_25mhz_i		=> en_25mhz_i,
+		rgb_i					=> rgb_i,
+		rgb_o					=> rgb_o,
+		h_sync_o			=> h_sync_o,
+		v_sync_o			=> v_sync_o,
+		rgb_enable_o	=> rgb_enable_o);
 
 		p_test : process
 		begin
+			if reset_i = '1' then
+				wait for 30 ns;
+			end if;
 			en_25mhz_i <= '1';
 			wait for 10 ns;
 			en_25mhz_i <= '0';

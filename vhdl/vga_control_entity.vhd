@@ -17,5 +17,5 @@ entity vga_control_entity is
 				rgb_o					: out std_logic_vector(11 downto 0);	-- RGB Color
 				h_sync_o			: out std_logic;											-- H-Sync
 				v_sync_o			: out std_logic;											-- V-Sync
-				rgb_enable_o	: out std_logic;											-- RGB Enable Signal (to Patterngenerator and Memorycontrol)
+				rgb_enable_o	: out std_logic);											-- RGB Enable Signal (to Patterngenerator and Memorycontrol)
 end vga_control_entity;

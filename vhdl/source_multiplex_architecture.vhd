@@ -16,6 +16,9 @@ architecture source_multiplexer_architecture of source_multiplexer_entity is
 
 begin
 
+	-- Debounced Switch Signal received from IO Logic
+	s_ss_sel <= swsync_i;
+
 	-----------------------------------------------------------------------------
 	-- Use one RGB Source for Output
 	-----------------------------------------------------------------------------
@@ -24,11 +27,8 @@ begin
 		if reset_i = '1' then
 			-- Reset System
 			s_rgb <= "000000000000";
-			s_ss_sel <= "000";
 
 		elsif clk_i'event and clk_i = '1' then
-			s_ss_sel <= swsync_i;
-
 			-- If SW2 (2) is 0 (No Moveable Object)
 			if s_ss_sel(2) = '0' then
 				case s_ss_sel is

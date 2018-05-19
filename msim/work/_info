@@ -89,7 +89,7 @@ R13
 !i113 1
 R6
 Etb_vga_control_entity
-Z14 w1524776235
+Z14 w1526735609
 R9
 R1
 R2
@@ -102,9 +102,9 @@ V]08U:T=P:zU`0TzNM82IC0
 !s100 kdIgF2H^95QhNS1SmLmNQ0
 R3
 32
-Z17 !s110 1524776256
+Z17 !s110 1526735625
 !i10b 1
-Z18 !s108 1524776256.000000
+Z18 !s108 1526735625.000000
 Z19 !s90 -reportprogress|300|../tb/tb_vga_control.vhd|
 Z20 !s107 ../tb/tb_vga_control.vhd|
 !i113 1
@@ -114,10 +114,10 @@ R9
 R1
 R2
 Z21 DEx4 work 21 tb_vga_control_entity 0 22 ]08U:T=P:zU`0TzNM82IC0
-l32
+l37
 L16
-V[R9PGLM<ZLZeT0WAOR7Hn0
-!s100 HAl=VNYadSKUZl?Pj:FIN0
+VHNKo6<83lHYzz_b<K4kN^3
+!s100 j[Ee35lFz;dcTITNlEgLo0
 R3
 32
 R17
@@ -128,7 +128,7 @@ R20
 !i113 1
 R6
 Evga_control_entity
-w1524774591
+w1526730473
 R1
 R2
 R0
@@ -136,8 +136,8 @@ R0
 F../vhdl/vga_control_entity.vhd
 l0
 L12
-VbTkBB9Nm5z9]3eQARB89_2
-!s100 507o`BjVn5YdVZ_ZF7RGR1
+V`E0W@Tn9^h?DiZjamn2T:1
+!s100 hWbboIKbK:P0P3S>o^P592
 R3
 32
 R17
@@ -148,17 +148,17 @@ R18
 !i113 1
 R6
 Avga_control_architecture
-w1524775092
-DEx4 work 18 vga_control_entity 0 22 bTkBB9Nm5z9]3eQARB89_2
+w1526734793
+DEx4 work 18 vga_control_entity 0 22 `E0W@Tn9^h?DiZjamn2T:1
 R7
 R1
 R2
 8../vhdl/vga_control_architecture.vhd
 F../vhdl/vga_control_architecture.vhd
-l35
-L13
-VHX[oT`NdPSQl?J>bbC>[W0
-!s100 KJgHoRkSPSG0[ANT@>C7z0
+l41
+L18
+VUR>HT>0[alW:QO=LWlZZz3
+!s100 RgkPNUWL490gf;zLGGL[j2
 R3
 32
 R17
