@@ -29,23 +29,23 @@ Z5 !s108 1526737869.000000
 !i113 1
 Z6 tExplicit 1 CvgOpt 0
 Aio_logic_architecture
-Z7 w1526737689
-Z8 DEx4 work 15 io_logic_entity 0 22 o?zeoRlWgQ6c=T`N8SgRI3
-Z9 DPx4 ieee 15 std_logic_arith 0 22 [G314=:2zXJ`VORJe1J@Z1
+w1526737689
+DEx4 work 15 io_logic_entity 0 22 o?zeoRlWgQ6c=T`N8SgRI3
+Z7 DPx4 ieee 15 std_logic_arith 0 22 [G314=:2zXJ`VORJe1J@Z1
 R1
 R2
-Z10 8../vhdl/io_logic_architecture.vhd
-Z11 F../vhdl/io_logic_architecture.vhd
+8../vhdl/io_logic_architecture.vhd
+F../vhdl/io_logic_architecture.vhd
 l22
 L13
-Z12 VSLeQ]SNc03>]8KHBjY@5D0
-Z13 !s100 RaFU9eQggA@;C9mbOk80O1
+VSLeQ]SNc03>]8KHBjY@5D0
+!s100 RaFU9eQggA@;C9mbOk80O1
 R3
 32
 R4
 !i10b 1
 R5
-Z14 !s90 -reportprogress|300|../vhdl/io_logic_architecture.vhd|
+!s90 -reportprogress|300|../vhdl/io_logic_architecture.vhd|
 !s107 ../vhdl/io_logic_architecture.vhd|
 !i113 1
 R6
@@ -82,9 +82,9 @@ V5:kGoI:`zKO9hHJXOAcBh2
 !s100 GDa=HJ<6F0kM_N3PLlk@f3
 R3
 32
-Z15 !s110 1524771581
+Z8 !s110 1524771581
 !i10b 1
-Z16 !s108 1524771581.000000
+Z9 !s108 1524771581.000000
 !s90 -reportprogress|300|../vhdl/prescaler_entity.vhd|
 !s107 ../vhdl/prescaler_entity.vhd|
 !i113 1
@@ -92,7 +92,7 @@ R6
 Aprescaler_architecture
 w1524771560
 DEx4 work 16 prescaler_entity 0 22 5:kGoI:`zKO9hHJXOAcBh2
-R9
+R7
 R1
 R2
 8../vhdl/prescaler_architecture.vhd
@@ -103,36 +103,36 @@ VMnAMTPVoXMW`h]K3Fzn6j1
 !s100 HXPXYga>Q@J5lN_Udm@nI1
 R3
 32
-R15
+R8
 !i10b 1
-R16
+R9
 !s90 -reportprogress|300|../vhdl/prescaler_architecture.vhd|
 !s107 ../vhdl/prescaler_architecture.vhd|
 !i113 1
 R6
 Etb_prescaler_entity
-Z17 w1524765120
-Z18 DPx4 ieee 11 numeric_std 0 22 :ASDNFgHXf_ih3J@9F3Ze1
+Z10 w1524765120
+Z11 DPx4 ieee 11 numeric_std 0 22 :ASDNFgHXf_ih3J@9F3Ze1
 R1
 R2
 R0
-Z19 8../tb/tb_prescaler.vhd
-Z20 F../tb/tb_prescaler.vhd
+Z12 8../tb/tb_prescaler.vhd
+Z13 F../tb/tb_prescaler.vhd
 l0
 L13
 VDMB];mGV8<i>L76I_CX=;3
 !s100 B3LkQ:D4OL3P5Q4;YXiQ;3
 R3
 32
-R15
+R8
 !i10b 1
-R16
-Z21 !s90 -reportprogress|300|../tb/tb_prescaler.vhd|
-Z22 !s107 ../tb/tb_prescaler.vhd|
+R9
+Z14 !s90 -reportprogress|300|../tb/tb_prescaler.vhd|
+Z15 !s107 ../tb/tb_prescaler.vhd|
 !i113 1
 R6
 Atb_prescaler_architecture
-R18
+R11
 R1
 R2
 DEx4 work 19 tb_prescaler_entity 0 22 DMB];mGV8<i>L76I_CX=;3
@@ -142,54 +142,54 @@ Vc7_QoRUa6[0342c?5ZZ]51
 !s100 ^=CB>Wo2?>SVeL2L>Q>UY1
 R3
 32
-R15
+R8
 !i10b 1
-R16
-R21
-R22
+R9
+R14
+R15
 !i113 1
 R6
 Etb_vga_control_entity
-Z23 w1526735609
-R18
+Z16 w1526735609
+R11
 R1
 R2
 R0
-Z24 8../tb/tb_vga_control.vhd
-Z25 F../tb/tb_vga_control.vhd
+Z17 8../tb/tb_vga_control.vhd
+Z18 F../tb/tb_vga_control.vhd
 l0
 L13
 V]08U:T=P:zU`0TzNM82IC0
 !s100 kdIgF2H^95QhNS1SmLmNQ0
 R3
 32
-Z26 !s110 1526735625
+Z19 !s110 1526738355
 !i10b 1
-Z27 !s108 1526735625.000000
-Z28 !s90 -reportprogress|300|../tb/tb_vga_control.vhd|
-Z29 !s107 ../tb/tb_vga_control.vhd|
+Z20 !s108 1526738355.000000
+Z21 !s90 -reportprogress|300|../tb/tb_vga_control.vhd|
+Z22 !s107 ../tb/tb_vga_control.vhd|
 !i113 1
 R6
 Atb_vga_control_architecture
-R18
+R11
 R1
 R2
-DEx4 work 21 tb_vga_control_entity 0 22 ]08U:T=P:zU`0TzNM82IC0
+Z23 DEx4 work 21 tb_vga_control_entity 0 22 ]08U:T=P:zU`0TzNM82IC0
 l37
 L16
-VHNKo6<83lHYzz_b<K4kN^3
-!s100 j[Ee35lFz;dcTITNlEgLo0
+Z24 VHNKo6<83lHYzz_b<K4kN^3
+Z25 !s100 j[Ee35lFz;dcTITNlEgLo0
 R3
 32
-R26
+R19
 !i10b 1
-R27
-R28
-R29
+R20
+R21
+R22
 !i113 1
 R6
 Evga_control_entity
-w1526730473
+Z26 w1526736434
 R1
 R2
 R0
@@ -201,17 +201,16 @@ V`E0W@Tn9^h?DiZjamn2T:1
 !s100 hWbboIKbK:P0P3S>o^P592
 R3
 32
-R26
+R19
 !i10b 1
-R27
+R20
 !s90 -reportprogress|300|../vhdl/vga_control_entity.vhd|
 !s107 ../vhdl/vga_control_entity.vhd|
 !i113 1
 R6
 Avga_control_architecture
-w1526734793
 DEx4 work 18 vga_control_entity 0 22 `E0W@Tn9^h?DiZjamn2T:1
-R9
+R7
 R1
 R2
 8../vhdl/vga_control_architecture.vhd
@@ -222,9 +221,9 @@ VUR>HT>0[alW:QO=LWlZZz3
 !s100 RgkPNUWL490gf;zLGGL[j2
 R3
 32
-R26
+R19
 !i10b 1
-R27
+R20
 !s90 -reportprogress|300|../vhdl/vga_control_architecture.vhd|
 !s107 ../vhdl/vga_control_architecture.vhd|
 !i113 1
