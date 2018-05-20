@@ -7,7 +7,6 @@ add wave -noupdate -format Logic /tb_vga_control_entity/reset_i
 add wave -noupdate -format Logic /tb_vga_control_entity/en_25mhz_i
 add wave -noupdate -format Logic /tb_vga_control_entity/h_sync_o
 add wave -noupdate -format Logic /tb_vga_control_entity/v_sync_o
-add wave -noupdate -format Logic /tb_vga_control_entity/rgb_enable_o
 add wave -noupdate -format Logic /tb_vga_control_entity/rgb_o
 add wave -noupdate -format Logic /tb_vga_control_entity/i_vga_control_entity/s_enctr_h_sync
 add wave -noupdate -format Logic /tb_vga_control_entity/i_vga_control_entity/H_WHOLE_LINE

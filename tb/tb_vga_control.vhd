@@ -15,24 +15,26 @@ end tb_vga_control_entity;
 
 architecture tb_vga_control_architecture of tb_vga_control_entity is
 	component vga_control_entity
-	port(	clk_i					: in std_logic;												-- System Clock (100MHz)
-				reset_i				: in std_logic;												-- Asynchronous reset (BTNC)
-				en_25mhz_i		: in std_logic;												-- Pixel Enable (25MHz) from Prescaler
-				rgb_i					: in std_logic_vector(11 downto 0);		-- RGB Colour from Source Multiplexer
-				rgb_o					: out std_logic_vector(11 downto 0);	-- RGB Color to VGA with sync
-				h_sync_o			: out std_logic;											-- H-Sync
-				v_sync_o			: out std_logic;											-- V-Sync
-				rgb_enable_o	: out std_logic);											-- Pixel-Enable Signal
+	port(	clk_i							: in std_logic;												-- System Clock (100MHz)
+				reset_i						: in std_logic;												-- Asynchronous reset (BTNC)
+				en_25mhz_i				: in std_logic;												-- Pixel Enable (25MHz) from Prescaler
+				rgb_i							: in std_logic_vector(11 downto 0);		-- RGB Colour from Source Multiplexer
+				rgb_o							: out std_logic_vector(11 downto 0);	-- RGB Color to VGA with sync
+				h_sync_o					: out std_logic;											-- H-Sync
+				v_sync_o					: out std_logic;											-- V-Sync
+				h_sync_counter_o	: out std_logic_vector(9 downto 0);		-- H-Sync Counter
+				v_sync_counter_o	: out std_logic_vector(9 downto 0));	-- V-Sync Counter
 	end component;
 
-	signal clk_i				: std_logic := '0';
-	signal reset_i			: std_logic := '1';
-	signal en_25mhz_i		: std_logic := '0';
-	signal rgb_i				: std_logic_vector(11 downto 0) := "111111111111";
-	signal rgb_o				: std_logic_vector(11 downto 0);
-	signal h_sync_o			: std_logic;
-	signal v_sync_o			: std_logic;
-	signal rgb_enable_o	: std_logic;
+	signal clk_i						: std_logic := '0';
+	signal reset_i					: std_logic := '1';
+	signal en_25mhz_i				: std_logic := '0';
+	signal rgb_i						: std_logic_vector(11 downto 0) := "111111111111";
+	signal rgb_o						: std_logic_vector(11 downto 0);
+	signal h_sync_o					: std_logic;
+	signal v_sync_o					: std_logic;
+	signal h_sync_counter_o	: std_logic_vector(9 downto 0);
+	signal v_sync_counter_o	: std_logic_vector(9 downto 0);
 
 begin
 
@@ -41,14 +43,15 @@ begin
 
 	i_vga_control_entity : vga_control_entity
 	port map
-	(	clk_i 				=> clk_i,
-		reset_i				=> reset_i,
-		en_25mhz_i		=> en_25mhz_i,
-		rgb_i					=> rgb_i,
-		rgb_o					=> rgb_o,
-		h_sync_o			=> h_sync_o,
-		v_sync_o			=> v_sync_o,
-		rgb_enable_o	=> rgb_enable_o);
+	(	clk_i 						=> clk_i,
+		reset_i						=> reset_i,
+		en_25mhz_i				=> en_25mhz_i,
+		rgb_i							=> rgb_i,
+		rgb_o							=> rgb_o,
+		h_sync_o					=> h_sync_o,
+		v_sync_o					=> v_sync_o,
+		h_sync_counter_o	=> h_sync_counter_o,
+		v_sync_counter_o	=> v_sync_counter_o);
 
 		p_test : process
 		begin

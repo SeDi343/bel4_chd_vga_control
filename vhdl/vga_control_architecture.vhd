@@ -31,7 +31,7 @@ architecture vga_control_architecture of vga_control_entity is
 	constant V_BACK_PORCH			: std_logic_vector(9 downto 0) := "0000100001";	-- Back Porch		| 33
 	constant V_VISIBLE_AREA		: std_logic_vector(9 downto 0) := "0111100000";	-- Visible Area | 480
 	constant V_V_SYNC_START		: std_logic_vector(9 downto 0) := "0111101010";	-- V-Sync Start	| 490
-	constant V_V_SYNC_END			: std_logic_vector(9 downto 0) := "0111101100";	-- V-Sync End	| 492
+	constant V_V_SYNC_END			: std_logic_vector(9 downto 0) := "0111101100";	-- V-Sync End		| 492
 
 	signal s_h_sync						: std_logic;											-- H-Sync Signal
 	signal s_v_sync						: std_logic;											-- V-Sync Signal
@@ -122,7 +122,7 @@ begin
 			s_rgb <= "000000000000";
 
 		elsif clk_i'event and clk_i = '1' then
-			-- RGB Enable always 0
+			-- RGB Value in Invisible area always black
 			s_rgb <= "000000000000";
 
 			-- If Counter for V-Sync euqlas the V-Sync Visible area
