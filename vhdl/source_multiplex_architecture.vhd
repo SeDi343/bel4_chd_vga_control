@@ -12,14 +12,9 @@ use IEEE.std_logic_arith.all;
 
 architecture source_multiplexer_architecture of source_multiplexer_entity is
 	signal s_rgb		: std_logic_vector(11 downto 0);	-- Internal Signal for the RGB
-	signal s_ss_sel	: std_logic_vector(2 downto 0);		-- Switch Signal
-	signal s_ss_pb	: std_logic_vector(3 downto 0);		-- Push Button Signal
 
 begin
 
-	-- Debounced Switch and Push Button Signal received from IO Logic
-	s_ss_sel <= swsync_i;
-	s_ss_pb <= pbsync_i;
 
 	-----------------------------------------------------------------------------
 	-- Use one RGB Source for Output
@@ -32,8 +27,8 @@ begin
 
 		elsif clk_i'event and clk_i = '1' then
 			-- If SW2 (2) is 0 (No Moveable Object)
-			if s_ss_sel(2) = '0' then
-				case s_ss_sel is
+			if swsync_i(2) = '0' then
+				case swsync_i is
 					when "00" => s_rgb <= pattern_1_rgb_i;
 					when "10" => s_rgb <= pattern_2_rgb_i;
 					when "01" => s_rgb <= mem_1_rgb_i;
@@ -42,8 +37,8 @@ begin
 			end if;
 
 			-- If SW2 (2) is 1 (Moveable Object)
-			if s_ss_sel(2) = '1' then
-				case s_ss_sel is
+			if swsync_i(2) = '1' then
+				case swsync_i is
 					when "00" => s_rgb <= unsigned(pattern_1_rgb_i) + mem2_rgb_i;
 					when "10" => s_rgb <= 
 					when "01" => s_rgb <= 

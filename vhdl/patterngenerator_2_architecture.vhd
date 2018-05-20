@@ -26,15 +26,9 @@ architecture patterngenerator_2_architecture of patterngenerator_2_entity is
 
 	signal s_state				: t_state := NEWPAGE;
 
-	signal s_rgb_enable		: std_logic;											-- Internal RGB Stream Enable Signal
-	signal s_en_25mhz			: std_logic;											-- Internal Pixel Enable Signal
 	signal s_rgb					: std_logic_vector(11 downto 0);	-- Internal RGB Signal
 
 begin
-
-	-- Write Input into internal Signals
-	s_rgb_enable <= rgb_enable_i;
-	s_en_25mhz <= en_25mhz_i;
 
 	p_pattern_2 : process(clk_i, reset_i)
 	begin
@@ -47,14 +41,14 @@ begin
 			s_state <= NEWPAGE;
 
 		elsif clk_i'event and clk_i = '1' then
-			if s_en_25mhz = '1' then
+			if en_25mhz_i = '1' then
 				case s_state is
 					-- New Page
 					when NEWPAGE =>
 						s_rgb <= "111100000000";
 
 						-- If visible area is reached
-						if s_rgb_enable = '1' then
+						if rgb_enable_i = '1' then
 							s_linecntr <= 1;
 							s_colorlinecntr <= 1;
 							s_rowcntr <= 1;
@@ -133,7 +127,7 @@ begin
 						s_colorlinecntr <= 1;
 						s_rowcntr <= s_rowcntr + 1;
 
-						if s_rgb_enable = '1' then
+						if rgb_enable_i = '1' then
 							s_state <= RED;
 						end if;
 				end case;
