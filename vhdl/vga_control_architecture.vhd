@@ -126,9 +126,9 @@ begin
 			s_rgb <= "000000000000";
 
 			-- If Counter for V-Sync euqlas the V-Sync Visible area
-				if s_enctr_v_sync <= V_VISIBLE_AREA then
+			if s_enctr_v_sync <= V_VISIBLE_AREA then
 				-- If Counter for H-Sync euqls the H-Sync Visible area
-					if s_enctr_h_sync <= H_VISIBLE_AREA then
+				if s_enctr_h_sync <= H_VISIBLE_AREA then
 					s_rgb <= rgb_i;
 				end if;
 			end if;
