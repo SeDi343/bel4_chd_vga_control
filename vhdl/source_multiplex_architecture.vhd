@@ -28,20 +28,21 @@ begin
 		elsif clk_i'event and clk_i = '1' then
 			-- If SW2 (2) is 0 (No Moveable Object)
 			if swsync_i(2) = '0' then
-				case swsync_i is
+				case swsync_i(1 downto 0) is
 					when "00" => s_rgb <= pattern_1_rgb_i;
 					when "10" => s_rgb <= pattern_2_rgb_i;
-					when "01" => s_rgb <= mem_1_rgb_i;
+					--when "01" => s_rgb <= mem_1_rgb_i;
 					when others => s_rgb <= pattern_1_rgb_i;
 				end case;
 			end if;
 
 			-- If SW2 (2) is 1 (Moveable Object)
 			if swsync_i(2) = '1' then
-				case swsync_i is
-					when "00" => s_rgb <= unsigned(pattern_1_rgb_i) + mem2_rgb_i;
-					when "10" => s_rgb <= 
-					when "01" => s_rgb <= 
+				case swsync_i(1 downto 0) is
+					when "00" => s_rgb <= pattern_1_rgb_i;
+					when "10" => s_rgb <= pattern_2_rgb_i;
+					--when "01" => s_rgb <= mem_1_rgb_i;
+					when others => s_rgb <= pattern_1_rgb_i;
 				end case;
 			end if;
 		end if;

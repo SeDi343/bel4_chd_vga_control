@@ -12,7 +12,7 @@ use IEEE.std_logic_arith.all;
 use IEEE.numeric_std.all;
 
 architecture patterngenerator_1_architecture of patterngenerator_1_entity is
-	signal s_rgb					: std_logic_vector(11 downto 0);	-- Internal RGB Signal
+	signal s_rgb	: std_logic_vector(11 downto 0);	-- Internal RGB Signal
 
 begin
 

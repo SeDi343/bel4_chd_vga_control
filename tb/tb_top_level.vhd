@@ -52,6 +52,8 @@ begin
 			sw_i <= "000";
 			pb_i <= "0000";
 		end if;
+		--wait for 1 sec;
+		--sw_i <= "010";
 		wait for 1 sec;
 	end process p_test;
 
