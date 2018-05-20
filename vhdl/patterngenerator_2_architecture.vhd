@@ -31,10 +31,6 @@ architecture patterngenerator_2_architecture of patterngenerator_2_entity is
 																(R, G, B, R, G, B, R, G, B, R));
 
 	signal s_rgb		: std_logic_vector(11 downto 0);	-- Internal RGB Signal
-	signal h				: integer;												-- Horizontal Coordinates
-	signal hnext		: integer;												-- Horizontal Coordinates with Offset
-	signal v				: integer;												-- Vertical Coordinates
-	signal vnext		: integer;												-- Vertical Coordinates with Offset
 
 begin
 
@@ -42,6 +38,11 @@ begin
 	-- Pattern 2 Generator
 	-----------------------------------------------------------------------------
 	p_pattern_2 : process(clk_i, reset_i)
+	variable h				: integer;												-- Horizontal Coordinates
+	variable hnext		: integer;												-- Horizontal Coordinates with Offset
+	variable v				: integer;												-- Vertical Coordinates
+	variable vnext		: integer;												-- Vertical Coordinates with Offset
+
 	begin
 		if reset_i = '1' then
 			-- Reset System
@@ -51,11 +52,11 @@ begin
 			-- Creating 2 for loops for matrix x and y coordinates
 			for x in 0 to 9 loop
 				for y in 0 to 9 loop
-					h <= x * 64;
-					hnext <= h + 64;
+					h := x * 64;
+					hnext := h + 64;
 
-					v <= y * 48;
-					vnext <= v + 48;
+					v := y * 48;
+					vnext := v + 48;
 
 					if h_sync_counter_i >= h and h_sync_counter_i < hnext then
 						if v_sync_counter_i >= v and v_sync_counter_i < vnext then
