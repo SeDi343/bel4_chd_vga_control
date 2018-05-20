@@ -49,7 +49,7 @@ begin
 	p_test : process
 	begin
 		if reset_i = '1' then
-			sw_i <= "000";
+			sw_i <= "010";
 			pb_i <= "0000";
 		end if;
 		--wait for 1 sec;

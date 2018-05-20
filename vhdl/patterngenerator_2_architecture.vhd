@@ -38,6 +38,9 @@ architecture patterngenerator_2_architecture of patterngenerator_2_entity is
 
 begin
 
+	-----------------------------------------------------------------------------
+	-- Pattern 2 Generator
+	-----------------------------------------------------------------------------
 	p_pattern_2 : process(clk_i, reset_i)
 	begin
 		if reset_i = '1' then
@@ -56,7 +59,7 @@ begin
 
 					if h_sync_counter_i >= h and h_sync_counter_i < hnext then
 						if v_sync_counter_i >= v and v_sync_counter_i < vnext then
-							s_rgb <= matrix(h,v);
+							s_rgb <= matrix(y,x);
 						end if;
 					end if;
 				end loop;

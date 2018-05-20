@@ -16,6 +16,9 @@ architecture patterngenerator_1_architecture of patterngenerator_1_entity is
 
 begin
 
+	-----------------------------------------------------------------------------
+	-- Pattern 1 Generator
+	-----------------------------------------------------------------------------
 	p_pattern_1 : process(clk_i, reset_i)
 	begin
 		if reset_i = '1' then
