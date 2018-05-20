@@ -21,9 +21,9 @@ Vo?zeoRlWgQ6c=T`N8SgRI3
 !s100 2Tz^k@a];9XQjghUM=CjK2
 Z4 OV;C;10.5b;63
 32
-Z5 !s110 1526781374
+Z5 !s110 1526782470
 !i10b 1
-Z6 !s108 1526781374.000000
+Z6 !s108 1526782470.000000
 !s90 -reportprogress|300|../vhdl/io_logic_entity.vhd|
 !s107 ../vhdl/io_logic_entity.vhd|
 !i113 1
@@ -103,9 +103,9 @@ V]OC9m`jUYz<SES`RE_fBD1
 !s100 X9hM5R2zGhgAI_Z2n^RfO3
 R4
 32
-R5
+Z11 !s110 1526782469
 !i10b 1
-R6
+Z12 !s108 1526782469.000000
 !s90 -reportprogress|300|../vhdl/prescaler_entity.vhd|
 !s107 ../vhdl/prescaler_entity.vhd|
 !i113 1
@@ -123,32 +123,32 @@ V3[AmkzCIzn]^g2X0hQ`WP1
 !s100 kG2NQX6Ve2XQXFPzjUjQI0
 R4
 32
-R5
+R11
 !i10b 1
-R6
+R12
 !s90 -reportprogress|300|../vhdl/prescaler_architecture.vhd|
 !s107 ../vhdl/prescaler_architecture.vhd|
 !i113 1
 R7
 Etb_prescaler_entity
-Z11 w1524765120
+Z13 w1524765120
 R9
 R2
 R3
 R0
-Z12 8../tb/tb_prescaler.vhd
-Z13 F../tb/tb_prescaler.vhd
+Z14 8../tb/tb_prescaler.vhd
+Z15 F../tb/tb_prescaler.vhd
 l0
 L13
 VDMB];mGV8<i>L76I_CX=;3
 !s100 B3LkQ:D4OL3P5Q4;YXiQ;3
 R4
 32
-Z14 !s110 1526739935
+Z16 !s110 1526739935
 !i10b 1
-Z15 !s108 1526739935.000000
-Z16 !s90 -reportprogress|300|../tb/tb_prescaler.vhd|
-Z17 !s107 ../tb/tb_prescaler.vhd|
+Z17 !s108 1526739935.000000
+Z18 !s90 -reportprogress|300|../tb/tb_prescaler.vhd|
+Z19 !s107 ../tb/tb_prescaler.vhd|
 !i113 1
 R7
 Atb_prescaler_architecture
@@ -162,21 +162,21 @@ Vc7_QoRUa6[0342c?5ZZ]51
 !s100 ^=CB>Wo2?>SVeL2L>Q>UY1
 R4
 32
-R14
-!i10b 1
-R15
 R16
+!i10b 1
 R17
+R18
+R19
 !i113 1
 R7
 Etb_top_level_entity
-Z18 w1526777789
+Z20 w1526777789
 R9
 R2
 R3
 R0
-Z19 8../tb/tb_top_level.vhd
-Z20 F../tb/tb_top_level.vhd
+Z21 8../tb/tb_top_level.vhd
+Z22 F../tb/tb_top_level.vhd
 l0
 L13
 Vcb_L78iD[neWJOl^:^8Sl3
@@ -186,47 +186,47 @@ R4
 R5
 !i10b 1
 R6
-Z21 !s90 -reportprogress|300|../tb/tb_top_level.vhd|
-Z22 !s107 ../tb/tb_top_level.vhd|
+Z23 !s90 -reportprogress|300|../tb/tb_top_level.vhd|
+Z24 !s107 ../tb/tb_top_level.vhd|
 !i113 1
 R7
 Atb_top_level_architecture
 R9
 R2
 R3
-Z23 DEx4 work 19 tb_top_level_entity 0 22 cb_L78iD[neWJOl^:^8Sl3
+Z25 DEx4 work 19 tb_top_level_entity 0 22 cb_L78iD[neWJOl^:^8Sl3
 l35
 L16
-Z24 VNC7gN0:T2aS>FGd8UUQ5B1
-Z25 !s100 6`8BOcK50[bDm:82P^g?Q1
+Z26 VNC7gN0:T2aS>FGd8UUQ5B1
+Z27 !s100 6`8BOcK50[bDm:82P^g?Q1
 R4
 32
 R5
 !i10b 1
 R6
-R21
-R22
+R23
+R24
 !i113 1
 R7
 Etb_vga_control_entity
-Z26 w1526779920
+Z28 w1526779920
 R9
 R2
 R3
 R0
-Z27 8../tb/tb_vga_control.vhd
-Z28 F../tb/tb_vga_control.vhd
+Z29 8../tb/tb_vga_control.vhd
+Z30 F../tb/tb_vga_control.vhd
 l0
 L13
 V]08U:T=P:zU`0TzNM82IC0
 !s100 kdIgF2H^95QhNS1SmLmNQ0
 R4
 32
-Z29 !s110 1526780982
+Z31 !s110 1526780982
 !i10b 1
-Z30 !s108 1526780982.000000
-Z31 !s90 -reportprogress|300|../tb/tb_vga_control.vhd|
-Z32 !s107 ../tb/tb_vga_control.vhd|
+Z32 !s108 1526780982.000000
+Z33 !s90 -reportprogress|300|../tb/tb_vga_control.vhd|
+Z34 !s107 ../tb/tb_vga_control.vhd|
 !i113 1
 R7
 Atb_vga_control_architecture
@@ -240,11 +240,11 @@ V:76fS0Hol4a=^?a?NkVdO1
 !s100 Ie:jc[neTW>:7fPBmkTWa3
 R4
 32
-R29
-!i10b 1
-R30
 R31
+!i10b 1
 R32
+R33
+R34
 !i113 1
 R7
 Etop_level_entity
@@ -308,7 +308,7 @@ R6
 !i113 1
 R7
 Avga_control_architecture
-w1526781213
+w1526781976
 DEx4 work 18 vga_control_entity 0 22 AYWR=ng6;RaL;OifEIXPo1
 R8
 R2
@@ -317,8 +317,8 @@ R3
 F../vhdl/vga_control_architecture.vhd
 l43
 L18
-V@@2[o9VG9O8nmlR?ehO?]1
-!s100 @4TBn;h6Ehhe[jL29[D412
+V]Ue761z5>Ji27E61Rk6J32
+!s100 Wi8fIPZJ`3IGlUIiVR3]o1
 R4
 32
 R5
@@ -329,7 +329,7 @@ R6
 !i113 1
 R7
 Evga_monitor
-Z33 w1526778610
+Z35 w1526782447
 R2
 R3
 R0
@@ -337,8 +337,8 @@ R0
 F../vhdl/vga_monitor/vga_monitor_.vhd
 l0
 L47
-VN__0ncejT@O<ecVidcRNT0
-!s100 ;XdzzBZGYncR[f<gUZ`IB2
+V?Gb0XP?78<KR>B`;3Gg2:2
+!s100 aSZ5a^G3BFc=mUL>@;;kb1
 R4
 32
 R5
@@ -349,7 +349,7 @@ R6
 !i113 1
 R7
 Asim
-DEx4 work 11 vga_monitor 0 22 N__0ncejT@O<ecVidcRNT0
+DEx4 work 11 vga_monitor 0 22 ?Gb0XP?78<KR>B`;3Gg2:2
 R8
 R10
 R2

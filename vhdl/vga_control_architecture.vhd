@@ -50,7 +50,7 @@ begin
 		if reset_i = '1' then
 			-- Reset System
 			s_enctr_h_sync <= "0000000001";
-			s_enctr_v_sync <= "0000000001";
+			s_enctr_v_sync <= "0000000000";
 
 		elsif clk_i'event and clk_i = '1' then
 			-- If Pixel Enable equals 1
@@ -68,7 +68,7 @@ begin
 
 				-- If Counter for V-Sync equals the Whole Line
 				if s_enctr_v_sync = V_WHOLE_LINE then
-					s_enctr_v_sync <= "0000000001";
+					s_enctr_v_sync <= "0000000000";
 				end if;
 			end if;
 		end if;
