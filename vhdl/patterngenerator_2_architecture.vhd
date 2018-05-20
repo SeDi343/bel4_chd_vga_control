@@ -58,8 +58,8 @@ begin
 					v := y * 48;
 					vnext := v + 48;
 
-					if h_sync_counter_i >= h and h_sync_counter_i < hnext then
-						if v_sync_counter_i >= v and v_sync_counter_i < vnext then
+					if h_sync_counter_i >= h and h_sync_counter_i <= hnext then
+						if v_sync_counter_i >= v and v_sync_counter_i <= vnext then
 							s_rgb <= matrix(y,x);
 						end if;
 					end if;
