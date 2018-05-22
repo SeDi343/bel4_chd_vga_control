@@ -29,7 +29,7 @@ architecture vga_control_architecture of vga_control_entity is
 	constant V_FRONT_PORCH		: std_logic_vector(9 downto 0) := "0000001010";	-- Front Porch	| 10
 	constant V_V_SYNC_PULSE		: std_logic_vector(9 downto 0) := "0000000010";	-- V-Sync Pulse	| 2
 	constant V_BACK_PORCH			: std_logic_vector(9 downto 0) := "0000100001";	-- Back Porch		| 33
-	constant V_VISIBLE_AREA		: std_logic_vector(9 downto 0) := "0111100000";	-- Visible Area | 480
+	constant V_VISIBLE_AREA		: std_logic_vector(9 downto 0) := "0111100000";	-- Visible Area	| 480
 	constant V_V_SYNC_START		: std_logic_vector(9 downto 0) := "0111101010";	-- V-Sync Start	| 490
 	constant V_V_SYNC_END			: std_logic_vector(9 downto 0) := "0111101100";	-- V-Sync End		| 492
 

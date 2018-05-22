@@ -47,6 +47,8 @@ begin
 		if reset_i = '1' then
 			-- Reset System
 			s_rgb <= "000000000000";
+			h := 0;
+			v := 0;
 
 		elsif clk_i'event and clk_i = '1' then
 			-- Creating 2 for loops for matrix x and y coordinates
