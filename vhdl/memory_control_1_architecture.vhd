@@ -22,7 +22,7 @@ architecture memory_control_1_architecture of memory_control_1_entity is
 	constant V_VISIBLE_AREA		: std_logic_vector(9 downto 0) := "0111100000";					-- Visible Area | 480
 	constant H_WHOLE_LINE			: std_logic_vector(9 downto 0) := "1100100000";					-- Whole Line		| 800
 	constant V_WHOLE_LINE			: std_logic_vector(9 downto 0) := "1000001101";					-- Whole Line		| 525
-	constant ROM_MAX_VALUE		: std_logic_vector(16 downto 0) : "010010101111111111";	-- Rom max addr value | 76799
+	constant ROM_MAX_VALUE		: std_logic_vector(16 downto 0) := "10010101111111111";	-- Rom max addr value | 76799
 
 	signal s_rom_addr	: std_logic_vector(16 downto 0);		-- Internal Address Signal
 	signal s_rom_dout	: std_logic_vector(11 downto 0);		-- Internal Data Signal
@@ -40,7 +40,7 @@ begin
 	-----------------------------------------------------------------------------
 	p_counter : process(clk_i, reset_i)
 	begin
-		if reset = '1' then
+		if reset_i = '1' then
 			-- Reset System
 			s_rom_addr <= "00000000000000000";
 			s_rom_dout <= "000000000000";
@@ -52,7 +52,7 @@ begin
 				if h_sync_counter_i <= H_VISIBLE_AREA then
 					-- If Rom Address is on max value reset it otherwise increment it with 1
 					if s_rom_addr = ROM_MAX_VALUE then
-						s_rom_addr = "00000000000000000";
+						s_rom_addr <= "00000000000000000";
 					else
 						s_rom_addr <= unsigned(s_rom_addr) + '1';
 					end if;
