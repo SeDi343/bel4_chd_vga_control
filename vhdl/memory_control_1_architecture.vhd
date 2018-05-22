@@ -50,22 +50,23 @@ begin
 			if v_sync_counter_i <= V_VISIBLE_AREA then
 				-- If Counter for H-Sync is less or equals the H-Sync Visible area
 				if h_sync_counter_i <= H_VISIBLE_AREA then
+					if s_rom_addr = ROM_MAX_VALUE then
+						s_rom_addr <= "00000000000000000";
+					else
+						s_rom_addr <= unsigned(s_rom_addr) + '1';
+					end if;
+
 					-- If H-Sync Counter euqlas the Start
 					if h_sync_counter_i = "0000000001" then
 						-- Set Rom Address to last addressvalue
 						s_rom_addr <= s_rom_current_val;
 					-- If H-Sync Counter euqals 1/2 of Visible area
-					elsif h_sync_counter_i = H_VISIBLE_AREA_12 then
+					elsif h_sync_counter_i = (unsigned(H_VISIBLE_AREA_12) - '1') then
 						s_rom_addr <= s_rom_current_val;
 					-- If H-Sync Counter quals the Visible area
-					elsif h_sync_counter_i = H_VISIBLE_AREA then
+					elsif h_sync_counter_i = (unsigned(H_VISIBLE_AREA) - '1') then
 						s_rom_current_val <= s_rom_addr;
 					-- If Rom Address is on max value reset it otherwise increment it with 1
-					end if;
-					if s_rom_addr = ROM_MAX_VALUE then
-						s_rom_addr <= "00000000000000000";
-					else
-						s_rom_addr <= unsigned(s_rom_addr) + '1';
 					end if;
 				end if;
 			end if;
