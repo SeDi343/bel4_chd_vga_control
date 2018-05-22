@@ -49,7 +49,7 @@ begin
 
 		elsif clk_i'event and clk_i = '1' then
 			-- If Counter for V-Sync is less or equals the V-Sync Visible area
-			if v_sync_counter_i <= V_VISIBLE_AREA then
+			if v_sync_counter_i <= (unsigned(V_VISIBLE_AREA) - '1') then
 				-- If Counter for H-Sync is less or equals the H-Sync Visible area
 				if h_sync_counter_i <= H_VISIBLE_AREA then
 					-- If H-Sync Counter euqlas the Start
@@ -57,14 +57,11 @@ begin
 						-- Set Rom Address to last addressvalue
 						s_rom_addr <= s_rom_current_val;
 					-- If H-Sync Counter euqals 1/2 of Visible area
-					elsif h_sync_counter_i = (unsigned(H_VISIBLE_AREA_12) - '1') then
+					elsif h_sync_counter_i = H_VISIBLE_AREA_12 then
 						s_rom_addr <= s_rom_current_val;
 					-- If H-Sync Counter quals the Visible area
-					elsif h_sync_counter_i = (unsigned(H_VISIBLE_AREA) - '1') then
+					elsif h_sync_counter_i = H_VISIBLE_AREA then
 						s_rom_current_val <= s_rom_addr;
-					-- If H-Sync Counter and V-Sync Counter are max
-					--elsif h_sync_counter_i = H_VISIBLE_AREA and v_sync_counter_i = V_VISIBLE_AREA then
-					--	s_rom_addr <= "00000000000000000";
 					end if;
 
 					-- If 25Mhz Enable Signal is high
