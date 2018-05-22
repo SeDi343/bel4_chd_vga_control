@@ -21,6 +21,8 @@ architecture memory_control_1_architecture of memory_control_1_entity is
 	constant H_VISIBLE_AREA			: std_logic_vector(9 downto 0) := "1010000000";					-- Visible Area					| 640
 	constant V_VISIBLE_AREA			: std_logic_vector(9 downto 0) := "0111100000";					-- Visible Area					| 480
 	constant H_VISIBLE_AREA_12	: std_logic_vector(9 downto 0) := "0101000000";					-- 1/2 of Visible Area	| 320
+	constant H_WHOLE_LINE				: std_logic_vector(9 downto 0) := "1100100000";					-- Whole Line						| 800
+	constant V_WHOLE_LINE				: std_logic_vector(9 downto 0) := "1000001101";					-- Whole Line						| 525
 	constant ROM_MAX_VALUE			: std_logic_vector(16 downto 0) := "10010101111111111";	-- Rom max addr value		| 76799
 
 	signal s_rom_current_val	: std_logic_vector(16 downto 0);			-- Rom Current Value - saves the  rom addressvalue if H-Sync Counter reaches 320
@@ -50,12 +52,6 @@ begin
 			if v_sync_counter_i <= V_VISIBLE_AREA then
 				-- If Counter for H-Sync is less or equals the H-Sync Visible area
 				if h_sync_counter_i <= H_VISIBLE_AREA then
-					if s_rom_addr = ROM_MAX_VALUE then
-						s_rom_addr <= "00000000000000000";
-					else
-						s_rom_addr <= unsigned(s_rom_addr) + '1';
-					end if;
-
 					-- If H-Sync Counter euqlas the Start
 					if h_sync_counter_i = "0000000001" then
 						-- Set Rom Address to last addressvalue
@@ -66,7 +62,19 @@ begin
 					-- If H-Sync Counter quals the Visible area
 					elsif h_sync_counter_i = (unsigned(H_VISIBLE_AREA) - '1') then
 						s_rom_current_val <= s_rom_addr;
-					-- If Rom Address is on max value reset it otherwise increment it with 1
+					-- If H-Sync Counter and V-Sync Counter are max
+					--elsif h_sync_counter_i = H_VISIBLE_AREA and v_sync_counter_i = V_VISIBLE_AREA then
+					--	s_rom_addr <= "00000000000000000";
+					end if;
+
+					-- If 25Mhz Enable Signal is high
+					if en_25mhz_i = '1' then
+						-- If Rom Address is on max value reset it otherwise increment it with 1
+						if s_rom_addr = ROM_MAX_VALUE or (h_sync_counter_i = H_VISIBLE_AREA and v_sync_counter_i = V_VISIBLE_AREA) then
+							s_rom_addr <= "00000000000000000";
+						else
+							s_rom_addr <= unsigned(s_rom_addr) + '1';
+						end if;
 					end if;
 				end if;
 			end if;

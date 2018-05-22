@@ -86,6 +86,7 @@ architecture top_level_architecture of top_level_entity is
 	component memory_control_1_entity
 	port(	clk_i							:  in std_logic;											-- System Clock (100MHz)
 				reset_i						:  in std_logic;											-- Asynchronous reset (BTNC)
+				en_25mhz_i				:  in std_logic;											-- Pixel Enable (25MHz) (from Prescaler)
 				h_sync_counter_i	:  in std_logic_vector(9 downto 0);		-- H-Sync Counter
 				v_sync_counter_i	:  in std_logic_vector(9 downto 0);		-- V-Sync Counter
 				rgb_o							: out std_logic_vector(11 downto 0));	-- RGB Output Stream (to Source Multiplex)
@@ -109,15 +110,6 @@ architecture top_level_architecture of top_level_entity is
 	signal s_v_sync					: std_logic;
 
 begin
-
-	--i_top_level_entity : top_level_entity
-	--port map(	clk_i					=> clk_i,
-	--					reset_i				=> reset_i,
-	--					sw_i					=> s_sw,
-	--					pb_i					=> s_pb,
-	--					rgb_o					=> s_rgb_vga_mon,
-	--					h_sync_o			=> s_h_sync,
-	--					v_sync_o			=> s_v_sync);
 
 	i_vga_monitor : vga_monitor
 	port map(	s_reset_i			=> reset_i,
@@ -180,8 +172,13 @@ begin
 	i_memory_control_1_entity : memory_control_1_entity
 	port map(	clk_i							=> clk_i,
 						reset_i						=> reset_i,
+						en_25mhz_i				=> s_en_25mhz,
 						h_sync_counter_i	=> s_h_sync_counter,
 						v_sync_counter_i	=> s_v_sync_counter,
 						rgb_o							=> s_rgb_m1_mux);
+
+	rgb_o <= s_rgb_vga_mon;
+	h_sync_o <= s_h_sync;
+	v_sync_o <= s_v_sync;
 
 end top_level_architecture;
