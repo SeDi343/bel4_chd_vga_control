@@ -1,0 +1,32 @@
+-- Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
+-- --------------------------------------------------------------------------------
+-- Tool Version: Vivado v.2016.1 (lin64) Build 1538259 Fri Apr  8 15:45:23 MDT 2016
+-- Date        : Tue May 22 19:28:11 2018
+-- Host        : fedora running 64-bit Fedora release 27 (Twenty Seven)
+-- Command     : write_vhdl -force -mode synth_stub
+--               /home/fedora/Dokumente/Schule/Fachhochschule/Semester_4/Chip_Design/Project_VGA_Controller/code/generate/rom_mem1/rom_mem1/rom_mem1_stub.vhdl
+-- Design      : rom_mem1
+-- Purpose     : Stub declaration of top-level module interface
+-- Device      : xc7a50ticsg325-1L
+-- --------------------------------------------------------------------------------
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+
+entity rom_mem1 is
+  Port ( 
+    clka : in STD_LOGIC;
+    addra : in STD_LOGIC_VECTOR ( 16 downto 0 );
+    douta : out STD_LOGIC_VECTOR ( 11 downto 0 )
+  );
+
+end rom_mem1;
+
+architecture stub of rom_mem1 is
+attribute syn_black_box : boolean;
+attribute black_box_pad_pin : string;
+attribute syn_black_box of stub : architecture is true;
+attribute black_box_pad_pin of stub : architecture is "clka,addra[16:0],douta[11:0]";
+attribute x_core_info : string;
+attribute x_core_info of stub : architecture is "blk_mem_gen_v8_3_2,Vivado 2016.1";
+begin
+end;
