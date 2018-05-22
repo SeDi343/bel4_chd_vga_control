@@ -84,7 +84,7 @@ begin
 			s_h_sync <= '0';
 
 		elsif clk_i'event and clk_i = '1' then
-			-- If Counter for H-Sync equals the Start
+			-- If Counter for H-Sync is less euqal the Start or greater as End
 			if s_enctr_h_sync <= H_H_SYNC_START or s_enctr_h_sync > H_H_SYNC_END then
 				s_h_sync <= '0';
 			else
@@ -103,7 +103,7 @@ begin
 			s_v_sync <= '0';
 
 		elsif clk_i'event and clk_i = '1' then
-			-- If Counter for V-Sync equals the Start
+			-- If Counter for V-Sync is less euqal the Start or greater as End
 			if s_enctr_v_sync <= V_V_SYNC_START or s_enctr_v_sync > V_V_SYNC_END then
 				s_v_sync <= '0';
 			else
@@ -125,9 +125,9 @@ begin
 			-- RGB Value in Invisible area always black
 			s_rgb <= "000000000000";
 
-			-- If Counter for V-Sync euqlas the V-Sync Visible area
+			-- If Counter for V-Sync is less or equals the V-Sync Visible area
 			if s_enctr_v_sync <= V_VISIBLE_AREA then
-				-- If Counter for H-Sync euqls the H-Sync Visible area
+				-- If Counter for H-Sync is less or equals the H-Sync Visible area
 				if s_enctr_h_sync <= H_VISIBLE_AREA then
 					s_rgb <= rgb_i;
 				end if;

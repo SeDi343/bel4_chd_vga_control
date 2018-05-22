@@ -2,8 +2,8 @@
 # Vivado v2016.1 (64-bit)
 # SW Build 1538259 on Fri Apr  8 15:45:23 MDT 2016
 # IP Build 1537824 on Fri Apr  8 04:28:57 MDT 2016
-# Start of session at: Tue May 22 19:32:11 2018
-# Process ID: 9476
+# Start of session at: Tue May 22 21:56:34 2018
+# Process ID: 17783
 # Current directory: /home/fedora/Dokumente/Schule/Fachhochschule/Semester_4/Chip_Design/Project_VGA_Controller/code/generate/rom_mem2/managed_ip_project/managed_ip_project.runs/rom_mem2_synth_1
 # Command line: vivado -log rom_mem2.vds -mode batch -messageDb vivado.pb -notrace -source rom_mem2.tcl
 # Log file: /home/fedora/Dokumente/Schule/Fachhochschule/Semester_4/Chip_Design/Project_VGA_Controller/code/generate/rom_mem2/managed_ip_project/managed_ip_project.runs/rom_mem2_synth_1/rom_mem2.vds

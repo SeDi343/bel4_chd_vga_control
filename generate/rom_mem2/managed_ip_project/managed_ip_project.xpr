@@ -6,8 +6,8 @@
 <Project Version="7" Minor="12" Path="/home/fedora/Dokumente/Schule/Fachhochschule/Semester_4/Chip_Design/Project_VGA_Controller/code/generate/rom_mem2/managed_ip_project/managed_ip_project.xpr">
   <DefaultLaunch Dir="$PRUNDIR"/>
   <Configuration>
-    <Option Name="Id" Val="0e68613950034a59a6b1a65288c52c83"/>
-    <Option Name="Part" Val="xc7a50ticsg325-1L"/>
+    <Option Name="Id" Val="f5219de7cf724e5b8e6c8f1eca343c86"/>
+    <Option Name="Part" Val="xc7a35tcpg236-1"/>
     <Option Name="CompiledLibDir" Val="$PCACHEDIR/compile_simlib"/>
     <Option Name="CompiledLibDirXSim" Val=""/>
     <Option Name="CompiledLibDirModelSim" Val="$PCACHEDIR/compile_simlib/modelsim"/>
@@ -24,7 +24,6 @@
     <Option Name="DefaultLib" Val="xil_defaultlib"/>
     <Option Name="ManageIP" Val="TRUE"/>
     <Option Name="EnableCoreContainer" Val="FALSE"/>
-    <Option Name="XPMLibraries" Val="XPM_MEMORY"/>
     <Option Name="CreateRefXciForCoreContainers" Val="FALSE"/>
     <Option Name="IPUserFilesDir" Val="$PPRDIR/../ip_user_files"/>
     <Option Name="IPStaticSourceDir" Val="$PPRDIR/../ip_user_files/ipstatic"/>
@@ -66,7 +65,6 @@
       </Config>
     </FileSet>
     <FileSet Name="sim_1" Type="SimulationSrcs" RelSrcDir="$PSRCDIR/sim_1">
-      <Filter Type="Srcs"/>
       <Config>
         <Option Name="DesignMode" Val="RTL"/>
         <Option Name="TopAutoSet" Val="TRUE"/>
@@ -111,22 +109,28 @@
     </Simulator>
   </Simulators>
   <Runs Version="1" Minor="10">
-    <Run Id="synth_1" Type="Ft3:Synth" SrcSet="sources_1" Part="xc7a50ticsg325-1L" ConstrsSet="constrs_1" Description="Vivado Synthesis Defaults" State="current" IncludeInArchive="true">
+    <Run Id="synth_1" Type="Ft3:Synth" SrcSet="sources_1" Part="xc7a35tcpg236-1" ConstrsSet="constrs_1" Description="Vivado Synthesis Defaults" State="current" IncludeInArchive="true">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2016"/>
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2016">
+          <Desc>Vivado Synthesis Defaults</Desc>
+        </StratHandle>
         <Step Id="synth_design"/>
       </Strategy>
     </Run>
-    <Run Id="rom_mem2_synth_1" Type="Ft3:Synth" SrcSet="rom_mem2" Part="xc7a50ticsg325-1L" ConstrsSet="rom_mem2" Description="Vivado Synthesis Defaults" Dir="$PRUNDIR/rom_mem2_synth_1" IncludeInArchive="true">
+    <Run Id="rom_mem2_synth_1" Type="Ft3:Synth" SrcSet="rom_mem2" Part="xc7a35tcpg236-1" ConstrsSet="rom_mem2" Description="Vivado Synthesis Defaults" Dir="$PRUNDIR/rom_mem2_synth_1" IncludeInArchive="true">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2016"/>
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2016">
+          <Desc>Vivado Synthesis Defaults</Desc>
+        </StratHandle>
         <Step Id="synth_design"/>
       </Strategy>
       <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
     </Run>
-    <Run Id="impl_1" Type="Ft2:EntireDesign" Part="xc7a50ticsg325-1L" ConstrsSet="constrs_1" Description="Default settings for Implementation." State="current" SynthRun="synth_1" IncludeInArchive="true">
+    <Run Id="impl_1" Type="Ft2:EntireDesign" Part="xc7a35tcpg236-1" ConstrsSet="constrs_1" Description="Default settings for Implementation." State="current" SynthRun="synth_1" IncludeInArchive="true">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2016"/>
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2016">
+          <Desc>Default settings for Implementation.</Desc>
+        </StratHandle>
         <Step Id="init_design"/>
         <Step Id="opt_design"/>
         <Step Id="power_opt_design"/>
@@ -138,9 +142,11 @@
         <Step Id="write_bitstream"/>
       </Strategy>
     </Run>
-    <Run Id="rom_mem2_impl_1" Type="Ft2:EntireDesign" Part="xc7a50ticsg325-1L" ConstrsSet="rom_mem2" Description="Default settings for Implementation." SynthRun="rom_mem2_synth_1" IncludeInArchive="false">
+    <Run Id="rom_mem2_impl_1" Type="Ft2:EntireDesign" Part="xc7a35tcpg236-1" ConstrsSet="rom_mem2" Description="Default settings for Implementation." SynthRun="rom_mem2_synth_1" IncludeInArchive="false">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2016"/>
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2016">
+          <Desc>Default settings for Implementation.</Desc>
+        </StratHandle>
         <Step Id="init_design"/>
         <Step Id="opt_design"/>
         <Step Id="power_opt_design"/>

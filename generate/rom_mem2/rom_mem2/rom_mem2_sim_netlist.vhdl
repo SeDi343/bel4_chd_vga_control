@@ -1,14 +1,14 @@
 -- Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2016.1 (lin64) Build 1538259 Fri Apr  8 15:45:23 MDT 2016
--- Date        : Tue May 22 19:33:25 2018
+-- Date        : Tue May 22 21:57:48 2018
 -- Host        : fedora running 64-bit Fedora release 27 (Twenty Seven)
 -- Command     : write_vhdl -force -mode funcsim
 --               /home/fedora/Dokumente/Schule/Fachhochschule/Semester_4/Chip_Design/Project_VGA_Controller/code/generate/rom_mem2/rom_mem2/rom_mem2_sim_netlist.vhdl
 -- Design      : rom_mem2
 -- Purpose     : This VHDL netlist is a functional simulation representation of the design and should not be modified or
 --               synthesized. This netlist cannot be used for SDF annotated simulation.
--- Device      : xc7a50ticsg325-1L
+-- Device      : xc7a35tcpg236-1
 -- --------------------------------------------------------------------------------
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
@@ -1710,7 +1710,7 @@ entity rom_mem2_blk_mem_gen_v8_3_2 is
   attribute C_EN_SLEEP_PIN : integer;
   attribute C_EN_SLEEP_PIN of rom_mem2_blk_mem_gen_v8_3_2 : entity is 0;
   attribute C_EST_POWER_SUMMARY : string;
-  attribute C_EST_POWER_SUMMARY of rom_mem2_blk_mem_gen_v8_3_2 : entity is "Estimated Power for IP     :     5.283511 mW";
+  attribute C_EST_POWER_SUMMARY of rom_mem2_blk_mem_gen_v8_3_2 : entity is "Estimated Power for IP     :     5.56159 mW";
   attribute C_FAMILY : string;
   attribute C_FAMILY of rom_mem2_blk_mem_gen_v8_3_2 : entity is "artix7";
   attribute C_HAS_AXI_ID : integer;
@@ -1993,7 +1993,7 @@ architecture STRUCTURE of rom_mem2 is
   attribute C_EN_SLEEP_PIN : integer;
   attribute C_EN_SLEEP_PIN of U0 : label is 0;
   attribute C_EST_POWER_SUMMARY : string;
-  attribute C_EST_POWER_SUMMARY of U0 : label is "Estimated Power for IP     :     5.283511 mW";
+  attribute C_EST_POWER_SUMMARY of U0 : label is "Estimated Power for IP     :     5.56159 mW";
   attribute C_FAMILY : string;
   attribute C_FAMILY of U0 : label is "artix7";
   attribute C_HAS_AXI_ID : integer;

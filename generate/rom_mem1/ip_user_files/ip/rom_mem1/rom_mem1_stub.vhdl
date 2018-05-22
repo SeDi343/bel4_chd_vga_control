@@ -1,13 +1,13 @@
 -- Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2016.1 (lin64) Build 1538259 Fri Apr  8 15:45:23 MDT 2016
--- Date        : Tue May 22 19:28:11 2018
+-- Date        : Tue May 22 21:47:11 2018
 -- Host        : fedora running 64-bit Fedora release 27 (Twenty Seven)
 -- Command     : write_vhdl -force -mode synth_stub
 --               /home/fedora/Dokumente/Schule/Fachhochschule/Semester_4/Chip_Design/Project_VGA_Controller/code/generate/rom_mem1/rom_mem1/rom_mem1_stub.vhdl
 -- Design      : rom_mem1
 -- Purpose     : Stub declaration of top-level module interface
--- Device      : xc7a50ticsg325-1L
+-- Device      : xc7a35tcpg236-1
 -- --------------------------------------------------------------------------------
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;

@@ -11,6 +11,9 @@ vcom ../generate/rom_mem1/rom_mem1/synth/rom_mem1.vhd
 # of all generated  Xilinx macros during simulation)
 vlog ../generate/rom_mem1/ip_user_files/sim_scripts/rom_mem1/modelsim/glbl.v
 
+vcom ../vhdl/memory_control_1_entity.vhd
+vcom ../vhdl/memory_control_1_architecture.vhd
+
 ## Memory 2
 # copy .mif file (which holds content of ROM) into ModelSim simulation directory
 file copy -force ../generate/rom_mem2/rom_mem2/rom_mem2.mif ./
@@ -22,6 +25,9 @@ vcom ../generate/rom_mem2/rom_mem2/synth/rom_mem2.vhd
 # compile Xilinx GLBL module (required for proper initialization
 # of all generated  Xilinx macros during simulation)
 vlog ../generate/rom_mem2/ip_user_files/sim_scripts/rom_mem2/modelsim/glbl.v
+
+vcom ../vhdl/memory_control_2_entity.vhd
+vcom ../vhld/memory_control_2_architecture.vhd
 
 ### Compile Programmed Components
 ## Prescaler
