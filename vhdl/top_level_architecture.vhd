@@ -54,15 +54,17 @@ architecture top_level_architecture of top_level_entity is
 
 	-- Source Mulitplexer
 	component source_multiplexer_entity
-	port(	clk_i						:  in std_logic;											-- System Clock (100MHz)
-				reset_i					:  in std_logic;											-- Asynchronous reset (BTNC)
-				swsync_i				:  in std_logic_vector(2 downto 0);		-- State of debounced switches (from IO Logic)
-				pbsync_i				:  in std_logic_vector(3 downto 0);		-- State of debounced push buttons (from IO Logic)
-				pattern_1_rgb_i	:  in std_logic_vector(11 downto 0);	-- RGB input (from Patern Generator 1)
-				pattern_2_rgb_i	:  in std_logic_vector(11 downto 0);	-- RGB input (from Patern Generator 2)
-				mem_1_rgb_i			:  in std_logic_vector(11 downto 0);	-- RGB input (from Memory 1)
-				mem_2_rgb_i			:  in std_logic_vector(11 downto 0);	-- RGB input (from Memory 2)
-				rgb_o						: out std_logic_vector(11 downto 0));	-- Multiplexed RGB output depend on switch input (to VGA Control)
+	port(	clk_i							:  in std_logic;											-- System Clock (100MHz)
+				reset_i						:  in std_logic;											-- Asynchronous reset (BTNC)
+				swsync_i					:  in std_logic_vector(2 downto 0);		-- State of debounced switches (from IO Logic)
+				pbsync_i					:  in std_logic_vector(3 downto 0);		-- State of debounced push buttons (from IO Logic)
+				pattern_1_rgb_i		:  in std_logic_vector(11 downto 0);	-- RGB input (from Patern Generator 1)
+				pattern_2_rgb_i		:  in std_logic_vector(11 downto 0);	-- RGB input (from Patern Generator 2)
+				mem_1_rgb_i				:  in std_logic_vector(11 downto 0);	-- RGB input (from Memory 1)
+				mem_2_rgb_i				:  in std_logic_vector(11 downto 0);	-- RGB input (from Memory 2)
+				h_sync_counter_i	:  in std_logic_vector(9 downto 0);		-- H-Sync Counter
+				v_sync_counter_i	:  in std_logic_vector(9 downto 0);		-- V-Sync Counter
+				rgb_o							: out std_logic_vector(11 downto 0));	-- Multiplexed RGB output depend on switch input (to VGA Control)
 	end component;
 
 	-- Patterngenerator 1
@@ -164,6 +166,8 @@ begin
 						pattern_2_rgb_i		=> s_rgb_p2_mux,
 						mem_1_rgb_i				=> s_rgb_m1_mux,
 						mem_2_rgb_i				=> s_rgb_m2_mux,
+						h_sync_counter_i	=> s_h_sync_counter,
+						v_sync_counter_i	=> s_v_sync_counter,
 						rgb_o							=> s_rgb_mux_vga);
 
 	i_patterngenerator_1_entity : patterngenerator_1_entity
