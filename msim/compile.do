@@ -26,8 +26,8 @@ vcom ../generate/rom_mem2/rom_mem2/synth/rom_mem2.vhd
 # of all generated  Xilinx macros during simulation)
 vlog ../generate/rom_mem2/ip_user_files/sim_scripts/rom_mem2/modelsim/glbl.v
 
-#vcom ../vhdl/memory_control_2_entity.vhd
-#vcom ../vhld/memory_control_2_architecture.vhd
+vcom ../vhdl/memory_control_2_entity.vhd
+vcom ../vhdl/memory_control_2_architecture.vhd
 
 ### Compile Programmed Components
 ## Prescaler
