@@ -16,8 +16,13 @@ architecture io_logic_architecture of io_logic_entity is
 
 	signal s_enctr		: std_logic_vector(17 downto 0);	-- Counter for Debouncing
 	signal s_500hzen	: std_logic;											-- 500Hz enable Signal
-	signal swsync			: std_logic_vector(2 downto 0);		-- Debounced Switches signal
-	signal pbsync			: std_logic_vector(3 downto 0);		-- Debounced push buttions signal
+	signal swsync_1		: std_logic_vector(2 downto 0);		-- Debounced Switches signal 1
+	signal swsync_2		: std_logic_vector(2 downto 0);		-- Debounced Switches signal 2
+	signal swsync_3		: std_logic_vector(2 downto 0);		-- Debounced Switches signal 3
+	signal pbsync_1		: std_logic_vector(3 downto 0);		-- Debounced push buttions signal 1
+	signal pbsync_2		: std_logic_vector(3 downto 0);		-- Debounced push buttions signal 2
+	signal pbsync_3		: std_logic_vector(3 downto 0);		-- Debounced push buttions signal 3
+	signal s_entpr		: std_logic_vector(1 downto 0);		-- 2 Flip-Flops for debouncing
 
 begin
 
@@ -56,21 +61,45 @@ begin
 	begin
 		if reset_i = '1' then
 			-- Reset System
-			swsync <= "000";
-			pbsync <= "0000";
+			swsync_1 <= "000";
+			swsync_2 <= "000";
+			swsync_3 <= "000";
+			pbsync_1 <= "0000";
+			pbsync_2 <= "0000";
+			pbsync_3 <= "0000";
+			s_entpr <= "00";
 
 		elsif clk_i'event and clk_i = '1' then
 			-- The switches and buttons are debounced and forwarded to internal singals
 			-- Both tasks are synchronous to the previously generated 500Hz enable signal
 
 			-- If the 500Hz signal is high put input of buttons and switches to signal
-			if s_500hzen = '1' then
-				swsync <= sw_i;
-				pbsync <= pb_i;
+			if s_500hzen = '1' and s_entpr = "00" then
+				swsync_1 <= sw_i;
+				pbsync_1 <= pb_i;
+				s_entpr <= "01";
+			end if;
+			if s_500hzen = '0' and s_entpr = "01" then
+				s_entpr <= "10";
+			end if;
+			if s_500hzen = '1' and s_entpr = "10" then
+				swsync_2 <= sw_i;
+				pbsync_2 <= pb_i;
+				s_entpr <= "11";
+			end if;
+			if s_500hzen = '0' and s_entpr = "11" then
+				s_entpr <= "00";
+			end if;
+
+			if swsync_1 = swsync_2 then
+				swsync_3 <= swsync_1;
+			end if;
+			if pbsync_1 = pbsync_2 then
+				pbsync_3 <= pbsync_1;
 			end if;
 		end if;
 	end process p_debounce;
 
-	swsync_o <= swsync;	-- Write debounced switches singal to output
-	pbsync_o <= pbsync;	-- Write debounced push buttons signal to output
+	swsync_o <= swsync_3;	-- Write debounced switches singal to output
+	pbsync_o <= pbsync_3;	-- Write debounced push buttons signal to output
 end io_logic_architecture;

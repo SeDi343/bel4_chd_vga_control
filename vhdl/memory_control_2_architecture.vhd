@@ -18,11 +18,9 @@ architecture memory_control_2_architecture of memory_control_2_entity is
 					douta	: out std_logic_vector(11 downto 0));
 	end component;
 
-	constant H_VISIBLE_AREA			: std_logic_vector(9 downto 0) := "1010000000";					-- Visible Area						| 640
-	constant V_VISIBLE_AREA			: std_logic_vector(9 downto 0) := "0111100000";					-- Visible Area						| 480
-	constant H_VISIBLE_AREA_100	: std_logic_vector(9 downto 0) := "0001100100";					-- 100px of Visible Area	| 100
-	constant V_VISIBLE_AREA_100	: std_logic_vector(9 downto 0) := "0001100100";					-- 100px of Visible Area	| 100
-	constant ROM_MAX_VALUE			: std_logic_vector(13 downto 0) := "10011100001111";	-- Rom max addr value			| 9999
+	constant H_VISIBLE_AREA			: std_logic_vector(9 downto 0) := "1010000000";				-- Visible Area					| 640
+	constant V_VISIBLE_AREA			: std_logic_vector(9 downto 0) := "0111100000";				-- Visible Area					| 480
+	constant ROM_MAX_VALUE			: std_logic_vector(13 downto 0) := "10011100001111";	-- Rom max addr value		| 9999
 
 	signal s_rom_addr					: std_logic_vector(13 downto 0);			-- Internal Address Signal
 	signal s_rom_dout					: std_logic_vector(11 downto 0);			-- Internal Data Signal
@@ -46,14 +44,20 @@ begin
 
 		elsif clk_i'event and clk_i = '1' then
 			if object_i = '1' then
-					if en_25mhz_i = '1' then
-						-- If Rom Address is on max value reset it otherwise increment it with 1
-						if s_rom_addr = ROM_MAX_VALUE then
-							s_rom_addr <= "00000000000000";
-						else
-							s_rom_addr <= unsigned(s_rom_addr) + '1';
+				-- If Counter for V-Sync is less or equals the V-Sync Visible area
+				if v_sync_counter_i < V_VISIBLE_AREA then
+					-- If Counter for H-Sync is less or equals the H-Sync Visible area
+					if h_sync_counter_i <= H_VISIBLE_AREA then
+						if en_25mhz_i = '1' then
+							-- If Rom Address is on max value reset it otherwise increment it with 1
+							if s_rom_addr = ROM_MAX_VALUE or change_i = '1' then
+								s_rom_addr <= "00000000000000";
+							else
+								s_rom_addr <= unsigned(s_rom_addr) + '1';
+							end if;
 						end if;
 					end if;
+				end if;
 			end if;
 		end if;
 	end process p_counter;
@@ -67,13 +71,17 @@ begin
 			-- Reset System
 			s_rgb <= "000000000000";
 
-		elsif clk_i'event and clk_i = '1' then
-			-- RGB Output is always low if we are not in the visible area
-			s_rgb <= "111111111111";
-			if object_i = '1' then
+	elsif clk_i'event and clk_i = '1' then
+		if object_i = '1' then
+			-- If Counter for V-Sync is less or equals the V-Sync Visible area
+			if v_sync_counter_i < V_VISIBLE_AREA then
+				-- If Counter for H-Sync is less or equals the H-Sync Visible area
+				if h_sync_counter_i <= H_VISIBLE_AREA then
 					s_rgb <= s_rom_dout;
+				end if;
 			end if;
 		end if;
+	end if;
 	end process p_data;
 
 	rgb_o <= s_rgb;
