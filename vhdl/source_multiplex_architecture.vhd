@@ -16,6 +16,8 @@ architecture source_multiplexer_architecture of source_multiplexer_entity is
 	type t_state	is (BACKGROUND, OBJECT);
 
 	constant OSIZE				: integer := 100;									-- Object Size
+	constant HSIZE				: integer := 800;									-- Width
+	constant VSIZE				: integer := 525;									-- Height
 
 	signal s_rgb					: std_logic_vector(11 downto 0);	-- Internal Signal for the RGB
 	signal s_pbstate_l		: std_logic_vector(1 downto 0);		-- Button state BTNL (press and release Button)
