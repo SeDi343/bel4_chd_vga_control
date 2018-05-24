@@ -13,14 +13,14 @@ use IEEE.std_logic_arith.all;
 architecture top_level_architecture of top_level_entity is
 
 	-- VGA Monitor Simulator
-	component vga_monitor
-	port(	s_reset_i			:  in std_logic;
-				s_vga_red_i		:  in std_logic_vector(3 downto 0);
-				s_vga_green_i	:  in std_logic_vector(3 downto 0);
-				s_vga_blue_i	:  in std_logic_vector(3 downto 0);
-				s_vga_hsync_i	:  in std_logic;
-				s_vga_vsync_i	:  in std_logic);
-	end component;
+	--component vga_monitor
+	--port(	s_reset_i			:  in std_logic;
+	--			s_vga_red_i		:  in std_logic_vector(3 downto 0);
+	--			s_vga_green_i	:  in std_logic_vector(3 downto 0);
+	--			s_vga_blue_i	:  in std_logic_vector(3 downto 0);
+	--			s_vga_hsync_i	:  in std_logic;
+	--			s_vga_vsync_i	:  in std_logic);
+	--end component;
 
 	-- Prescaler
 	component prescaler_entity
@@ -123,13 +123,13 @@ architecture top_level_architecture of top_level_entity is
 
 begin
 
-	i_vga_monitor : vga_monitor
-	port map(	s_reset_i			=> reset_i,
-						s_vga_red_i		=> s_rgb_vga_mon(11 downto 8),
-						s_vga_green_i	=> s_rgb_vga_mon(7 downto 4),
-						s_vga_blue_i	=> s_rgb_vga_mon(3 downto 0),
-						s_vga_hsync_i	=> s_h_sync,
-						s_vga_vsync_i => s_v_sync);
+	--i_vga_monitor : vga_monitor
+	--port map(	s_reset_i			=> reset_i,
+	--					s_vga_red_i		=> s_rgb_vga_mon(11 downto 8),
+	--					s_vga_green_i	=> s_rgb_vga_mon(7 downto 4),
+	--					s_vga_blue_i	=> s_rgb_vga_mon(3 downto 0),
+	--					s_vga_hsync_i	=> s_h_sync,
+	--					s_vga_vsync_i => s_v_sync);
 
 	i_prescaler_entity : prescaler_entity
 	port map(	clk_i					=> clk_i,
