@@ -8,16 +8,27 @@
 
 library IEEE;
 use IEEE.std_logic_1164.all;
+use IEEE.std_logic_unsigned.all;
 use IEEE.std_logic_arith.all;
+use IEEE.numeric_std.all;
 
 architecture source_multiplexer_architecture of source_multiplexer_entity is
-	signal s_rgb				: std_logic_vector(11 downto 0);	-- Internal Signal for the RGB
-	signal s_pbstate_l	: std_logic_vector(1 downto 0);		-- Button state BTNL (press and release Button)
-	signal s_pbstate_r	: std_logic_vector(1 downto 0);		-- Button state BTNR (press and release Button)
-	signal s_pbstate_u	: std_logic_vector(1 downto 0);		-- Button state BTNU (press and release Button)
-	signal s_pbstate_d	: std_logic_vector(1 downto 0);		-- Button state BTND (press and release Button)
-	signal s_x_dir			: integer;												-- X Direction
-	signal s_y_dir			: integer;												-- Y Direction
+	type t_state	is (BACKGROUND, OBJECT);
+
+	constant OSIZE				: integer := 100;									-- Object Size
+	constant HSIZE				: integer := 640;									-- Horizontal Full Frame
+	constant VSIZE				: integer := 480;									-- Vertical Full Frame
+
+	signal s_rgb					: std_logic_vector(11 downto 0);	-- Internal Signal for the RGB
+	signal s_pbstate_l		: std_logic_vector(1 downto 0);		-- Button state BTNL (press and release Button)
+	signal s_pbstate_r		: std_logic_vector(1 downto 0);		-- Button state BTNR (press and release Button)
+	signal s_pbstate_u		: std_logic_vector(1 downto 0);		-- Button state BTNU (press and release Button)
+	signal s_pbstate_d		: std_logic_vector(1 downto 0);		-- Button state BTND (press and release Button)
+	signal s_x_dir				: integer;												-- X Direction
+	signal s_y_dir				: integer;												-- Y Direction
+	signal s_switch				: std_logic;											-- Switch between Background and Object
+	signal s_object				: std_logic;											-- Switch between Background and Object output
+	signal s_state				: t_state;												-- Switch between Background and Object state
 
 begin
 
@@ -30,6 +41,9 @@ begin
 		if reset_i = '1' then
 			-- Reset System
 			s_rgb <= "000000000000";
+			s_switch <= '0';
+			s_object <= '0';
+			s_state <= BACKGROUND;
 
 		elsif clk_i'event and clk_i = '1' then
 			-- If SW2 (2) is 0 (No Moveable Object)
@@ -44,12 +58,37 @@ begin
 
 			-- If SW2 (2) is 1 (Moveable Object)
 			if swsync_i(2) = '1' then
-				case swsync_i(1 downto 0) is
-					when "00" => s_rgb <= pattern_1_rgb_i;
-					when "10" => s_rgb <= pattern_2_rgb_i;
-					when "01" => s_rgb <= mem_2_rgb_i;
-					when others => s_rgb <= pattern_1_rgb_i;
-				end case;
+				if en_25mhz_i = '1' then
+					case s_state is
+						when BACKGROUND =>
+							case swsync_i(1 downto 0) is
+								when "00" => s_rgb <= pattern_1_rgb_i;
+								when "10" => s_rgb <= pattern_2_rgb_i;
+								when "01" => s_rgb <= mem_1_rgb_i;
+								when others => s_rgb <= pattern_1_rgb_i;
+							end case;
+
+							-- Check if Counters are in Object area
+							if h_sync_counter_i = s_x_dir and (v_sync_counter_i = s_y_dir or s_switch = '1') then
+								s_object <= '1';
+								s_switch <= '1';
+								s_state <= OBJECT;
+							end if;
+
+						when OBJECT =>
+							s_rgb <= mem_2_rgb_i;
+							-- If Object Pixel Counter X equals 100
+							if h_sync_counter_i = (s_x_dir + OSIZE) then
+								s_object <= '0';
+								s_state <= BACKGROUND;
+							end if;
+
+							-- If Object Pixel Counter Y equals 100
+							if v_sync_counter_i = (s_y_dir + OSIZE - 1) then
+								s_switch <= '0';
+							end if;
+					end case;
+				end if;
 			end if;
 		end if;
 	end process p_multiplex;
@@ -136,5 +175,6 @@ begin
 		end if;
 	end process p_buttons;
 
-	rgb_o <= s_rgb;	-- Write defined pattern RGB input to RGB output
+	rgb_o <= s_rgb;				-- Write defined pattern RGB input to RGB output
+	object_o <= s_object;	-- Switch between Background and Object
 end source_multiplexer_architecture;

@@ -18,7 +18,9 @@ entity source_multiplexer_entity is
 				pattern_2_rgb_i		:  in std_logic_vector(11 downto 0);	-- RGB input (from Patern Generator 2)
 				mem_1_rgb_i				:  in std_logic_vector(11 downto 0);	-- RGB input (from Memory 1)
 				mem_2_rgb_i				:  in std_logic_vector(11 downto 0);	-- RGB input (from Memory 2)
+				en_25mhz_i				:  in std_logic;											-- Pixel Enable (25MHz) (from Prescaler)
 				h_sync_counter_i	:  in std_logic_vector(9 downto 0);		-- H-Sync Counter
 				v_sync_counter_i	:  in std_logic_vector(9 downto 0);		-- V-Sync Counter
+				object_o					: out std_logic;											-- Object
 				rgb_o							: out std_logic_vector(11 downto 0));	-- Multiplexed RGB output depend on switch input (to VGA Control)
 end source_multiplexer_entity;

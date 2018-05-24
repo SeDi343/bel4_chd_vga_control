@@ -45,11 +45,7 @@ begin
 			s_rom_addr <= "00000000000000";
 
 		elsif clk_i'event and clk_i = '1' then
-			-- If Counter for V-Sync is less or equals the V-Sync Visible area
-			if v_sync_counter_i < V_VISIBLE_AREA_100 then
-				-- If Counter for H-Sync is less or equals the H-Sync Visible area
-				if h_sync_counter_i <= H_VISIBLE_AREA_100 then
-					-- If 25Mhz Enable Signal is high
+			if object_i = '1' then
 					if en_25mhz_i = '1' then
 						-- If Rom Address is on max value reset it otherwise increment it with 1
 						if s_rom_addr = ROM_MAX_VALUE then
@@ -58,7 +54,6 @@ begin
 							s_rom_addr <= unsigned(s_rom_addr) + '1';
 						end if;
 					end if;
-				end if;
 			end if;
 		end if;
 	end process p_counter;
@@ -75,12 +70,8 @@ begin
 		elsif clk_i'event and clk_i = '1' then
 			-- RGB Output is always low if we are not in the visible area
 			s_rgb <= "111111111111";
-			-- If Counter for V-Sync is less or equals the V-Sync Visible area
-			if v_sync_counter_i <= V_VISIBLE_AREA_100 then
-				-- If Counter for H-Sync is less or equals the H-Sync Visible area
-				if h_sync_counter_i <= H_VISIBLE_AREA_100 then
+			if object_i = '1' then
 					s_rgb <= s_rom_dout;
-				end if;
 			end if;
 		end if;
 	end process p_data;
