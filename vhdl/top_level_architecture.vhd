@@ -64,8 +64,8 @@ architecture top_level_architecture of top_level_entity is
 				mem_2_rgb_i				:  in std_logic_vector(11 downto 0);	-- RGB input (from Memory 2)
 				h_sync_counter_i	:  in std_logic_vector(9 downto 0);		-- H-Sync Counter
 				v_sync_counter_i	:  in std_logic_vector(9 downto 0);		-- V-Sync Counter
+				change_i					:  in std_logic;											-- Change state
 				object_o					: out std_logic;											-- Object
-				change_o					: out std_logic;											-- Change state
 				rgb_o							: out std_logic_vector(11 downto 0));	-- Multiplexed RGB output depend on switch input (to VGA Control)
 	end component;
 
@@ -104,7 +104,7 @@ architecture top_level_architecture of top_level_entity is
 				h_sync_counter_i	:  in std_logic_vector(9 downto 0);		-- H-Sync Counter
 				v_sync_counter_i	:  in std_logic_vector(9 downto 0);		-- V-Sync Counter
 				object_i					:  in std_logic;											-- Object
-				change_i					:  in std_logic;											-- Change state
+				change_o					: out std_logic;											-- Change state
 				rgb_o							: out std_logic_vector(11 downto 0));	-- RGB Output Stream (to Source Multiplex)
 	end component;
 
@@ -170,8 +170,8 @@ begin
 						mem_2_rgb_i				=> s_rgb_m2_mux,
 						h_sync_counter_i	=> s_h_sync_counter,
 						v_sync_counter_i	=> s_v_sync_counter,
+						change_i					=> s_change,
 						object_o					=> s_object,
-						change_o					=> s_change,
 						rgb_o							=> s_rgb_mux_vga);
 
 	i_patterngenerator_1_entity : patterngenerator_1_entity
@@ -202,7 +202,7 @@ begin
 						h_sync_counter_i	=> s_h_sync_counter,
 						v_sync_counter_i	=> s_v_sync_counter,
 						object_i					=> s_object,
-						change_i					=> s_change,
+						change_o					=> s_change,
 						rgb_o							=> s_rgb_m2_mux);
 
 	rgb_o <= s_rgb_vga_mon;

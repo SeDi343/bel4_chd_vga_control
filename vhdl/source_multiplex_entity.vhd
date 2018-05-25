@@ -20,7 +20,7 @@ entity source_multiplexer_entity is
 				mem_2_rgb_i				:  in std_logic_vector(11 downto 0);	-- RGB input (from Memory 2)
 				h_sync_counter_i	:  in std_logic_vector(9 downto 0);		-- H-Sync Counter
 				v_sync_counter_i	:  in std_logic_vector(9 downto 0);		-- V-Sync Counter
+				change_i					:  in std_logic;											-- Change state
 				object_o					: out std_logic;											-- Object
-				change_o					: out std_logic;											-- Change state
 				rgb_o							: out std_logic_vector(11 downto 0));	-- Multiplexed RGB output depend on switch input (to VGA Control)
 end source_multiplexer_entity;

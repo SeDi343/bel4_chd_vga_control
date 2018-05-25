@@ -1,7 +1,7 @@
 Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2016.1 (lin64) Build 1538259 Fri Apr  8 15:45:23 MDT 2016
-| Date         : Thu May 24 23:24:08 2018
+| Date         : Fri May 25 04:17:44 2018
 | Host         : fedora running 64-bit Fedora release 27 (Twenty Seven)
 | Command      : report_utilization -file top_level_entity_utilization_synth.rpt -pb top_level_entity_utilization_synth.pb
 | Design       : top_level_entity
@@ -30,8 +30,8 @@ Table of Contents
 +-------------------------+------+-------+-----------+-------+
 |        Site Type        | Used | Fixed | Available | Util% |
 +-------------------------+------+-------+-----------+-------+
-| Slice LUTs*             |  510 |     0 |     20800 |  2.45 |
-|   LUT as Logic          |  510 |     0 |     20800 |  2.45 |
+| Slice LUTs*             |  463 |     0 |     20800 |  2.23 |
+|   LUT as Logic          |  463 |     0 |     20800 |  2.23 |
 |   LUT as Memory         |    0 |     0 |      9600 |  0.00 |
 | Slice Registers         |  245 |     0 |     41600 |  0.59 |
 |   Register as Flip Flop |  245 |     0 |     41600 |  0.59 |
@@ -149,14 +149,14 @@ Table of Contents
 +----------+------+---------------------+
 | Ref Name | Used | Functional Category |
 +----------+------+---------------------+
-| LUT6     |  241 |                 LUT |
 | FDCE     |  234 |        Flop & Latch |
-| LUT2     |  155 |                 LUT |
+| LUT6     |  220 |                 LUT |
+| LUT2     |  166 |                 LUT |
 | CARRY4   |   99 |          CarryLogic |
-| LUT1     |   76 |                 LUT |
-| LUT5     |   72 |                 LUT |
-| LUT4     |   40 |                 LUT |
-| LUT3     |   25 |                 LUT |
+| LUT1     |   77 |                 LUT |
+| LUT4     |   42 |                 LUT |
+| LUT5     |   29 |                 LUT |
+| LUT3     |   19 |                 LUT |
 | OBUF     |   14 |                  IO |
 | FDPE     |   10 |        Flop & Latch |
 | IBUF     |    9 |                  IO |

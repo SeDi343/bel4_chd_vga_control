@@ -25,6 +25,7 @@ architecture memory_control_2_architecture of memory_control_2_entity is
 	signal s_rom_addr					: std_logic_vector(13 downto 0);			-- Internal Address Signal
 	signal s_rom_dout					: std_logic_vector(11 downto 0);			-- Internal Data Signal
 	signal s_rgb							: std_logic_vector(11 downto 0);			-- Internal RGB Signal
+	signal s_change				: std_logic;											-- Position has been changed, for memcontrol
 
 begin
 
@@ -50,10 +51,12 @@ begin
 					if h_sync_counter_i <= H_VISIBLE_AREA then
 						if en_25mhz_i = '1' then
 							-- If Rom Address is on max value reset it otherwise increment it with 1
-							if s_rom_addr = ROM_MAX_VALUE or change_i = '1' then
+							if s_rom_addr = ROM_MAX_VALUE then
 								s_rom_addr <= "00000000000000";
+								s_change <= '1';
 							else
 								s_rom_addr <= unsigned(s_rom_addr) + '1';
+								s_change <= '0';
 							end if;
 						end if;
 					end if;
@@ -85,4 +88,5 @@ begin
 	end process p_data;
 
 	rgb_o <= s_rgb;
+	change_o <= s_change;		-- Connect the change state with output
 end memory_control_2_architecture;

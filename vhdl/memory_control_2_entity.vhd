@@ -16,6 +16,6 @@ entity memory_control_2_entity is
 				h_sync_counter_i	:  in std_logic_vector(9 downto 0);		-- H-Sync Counter
 				v_sync_counter_i	:  in std_logic_vector(9 downto 0);		-- V-Sync Counter
 				object_i					:  in std_logic;											-- Object
-				change_i					:  in std_logic;											-- Change state
+				change_o					: out std_logic;											-- Change state
 				rgb_o							: out std_logic_vector(11 downto 0));	-- RGB Output Stream (to Source Multiplex)
 end memory_control_2_entity;

@@ -22,16 +22,16 @@ set_property used_in_implementation false [get_files /home/fedora/Dokumente/Schu
 add_files -quiet /home/fedora/Dokumente/Schule/Fachhochschule/Semester_4/Chip_Design/Project_VGA_Controller/code/generate/rom_mem2/rom_mem2/rom_mem2.dcp
 set_property used_in_implementation false [get_files /home/fedora/Dokumente/Schule/Fachhochschule/Semester_4/Chip_Design/Project_VGA_Controller/code/generate/rom_mem2/rom_mem2/rom_mem2.dcp]
 read_vhdl -library xil_defaultlib {
+  /home/fedora/Dokumente/Schule/Fachhochschule/Semester_4/Chip_Design/Project_VGA_Controller/code/vhdl/source_multiplex_entity.vhd
   /home/fedora/Dokumente/Schule/Fachhochschule/Semester_4/Chip_Design/Project_VGA_Controller/code/vhdl/io_logic_entity.vhd
   /home/fedora/Dokumente/Schule/Fachhochschule/Semester_4/Chip_Design/Project_VGA_Controller/code/vhdl/patterngenerator_1_entity.vhd
   /home/fedora/Dokumente/Schule/Fachhochschule/Semester_4/Chip_Design/Project_VGA_Controller/code/vhdl/prescaler_entity.vhd
-  /home/fedora/Dokumente/Schule/Fachhochschule/Semester_4/Chip_Design/Project_VGA_Controller/code/vhdl/source_multiplex_entity.vhd
   /home/fedora/Dokumente/Schule/Fachhochschule/Semester_4/Chip_Design/Project_VGA_Controller/code/vhdl/memory_control_1_entity.vhd
   /home/fedora/Dokumente/Schule/Fachhochschule/Semester_4/Chip_Design/Project_VGA_Controller/code/vhdl/vga_control_entity.vhd
   /home/fedora/Dokumente/Schule/Fachhochschule/Semester_4/Chip_Design/Project_VGA_Controller/code/vhdl/patterngenerator_2_entity.vhd
   /home/fedora/Dokumente/Schule/Fachhochschule/Semester_4/Chip_Design/Project_VGA_Controller/code/vhdl/memory_control_2_entity.vhd
-  /home/fedora/Dokumente/Schule/Fachhochschule/Semester_4/Chip_Design/Project_VGA_Controller/code/vhdl/io_logic_architecture.vhd
   /home/fedora/Dokumente/Schule/Fachhochschule/Semester_4/Chip_Design/Project_VGA_Controller/code/vhdl/source_multiplex_architecture.vhd
+  /home/fedora/Dokumente/Schule/Fachhochschule/Semester_4/Chip_Design/Project_VGA_Controller/code/vhdl/io_logic_architecture.vhd
   /home/fedora/Dokumente/Schule/Fachhochschule/Semester_4/Chip_Design/Project_VGA_Controller/code/vhdl/patterngenerator_2_architecture.vhd
   /home/fedora/Dokumente/Schule/Fachhochschule/Semester_4/Chip_Design/Project_VGA_Controller/code/vhdl/memory_control_1_architecture.vhd
   /home/fedora/Dokumente/Schule/Fachhochschule/Semester_4/Chip_Design/Project_VGA_Controller/code/vhdl/top_level_entity.vhd

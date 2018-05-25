@@ -1,7 +1,7 @@
 Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2016.1 (lin64) Build 1538259 Fri Apr  8 15:45:23 MDT 2016
-| Date             : Thu May 24 23:24:54 2018
+| Date             : Fri May 25 04:18:39 2018
 | Host             : fedora running 64-bit Fedora release 27 (Twenty Seven)
 | Command          : report_power -file top_level_entity_power_routed.rpt -pb top_level_entity_power_summary_routed.pb -rpx top_level_entity_power_routed.rpx
 | Design           : top_level_entity
@@ -30,8 +30,8 @@ Table of Contents
 ----------
 
 +--------------------------+-------+
-| Total On-Chip Power (W)  | 0.089 |
-| Dynamic (W)              | 0.016 |
+| Total On-Chip Power (W)  | 0.090 |
+| Dynamic (W)              | 0.017 |
 | Device Static (W)        | 0.073 |
 | Effective TJA (C/W)      | 5.0   |
 | Max Ambient (C)          | 84.6  |
@@ -49,18 +49,18 @@ Table of Contents
 +----------------+-----------+----------+-----------+-----------------+
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
-| Clocks         |     0.004 |        3 |       --- |             --- |
-| Slice Logic    |     0.002 |     1269 |       --- |             --- |
-|   LUT as Logic |     0.001 |      647 |     20800 |            3.11 |
+| Clocks         |     0.003 |        3 |       --- |             --- |
+| Slice Logic    |     0.001 |     1214 |       --- |             --- |
+|   LUT as Logic |     0.001 |      598 |     20800 |            2.88 |
 |   CARRY4       |    <0.001 |       99 |      8150 |            1.21 |
 |   Register     |    <0.001 |      287 |     41600 |            0.69 |
 |   F7/F8 Muxes  |    <0.001 |       18 |     32600 |            0.06 |
-|   Others       |     0.000 |      120 |       --- |             --- |
-| Signals        |     0.002 |     1149 |       --- |             --- |
+|   Others       |     0.000 |      121 |       --- |             --- |
+| Signals        |     0.002 |     1103 |       --- |             --- |
 | Block RAM      |     0.005 |     30.5 |        50 |           61.00 |
-| I/O            |     0.003 |       23 |       106 |           21.70 |
+| I/O            |     0.005 |       23 |       106 |           21.70 |
 | Static Power   |     0.073 |          |           |                 |
-| Total          |     0.089 |          |           |                 |
+| Total          |     0.090 |          |           |                 |
 +----------------+-----------+----------+-----------+-----------------+
 
 
@@ -70,7 +70,7 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     0.023 |       0.012 |      0.010 |
+| Vccint    |       1.000 |     0.022 |       0.012 |      0.010 |
 | Vccaux    |       1.800 |     0.013 |       0.000 |      0.013 |
 | Vcco33    |       3.300 |     0.002 |       0.001 |      0.001 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
@@ -139,7 +139,7 @@ Table of Contents
 +------------------------------------------------+-----------+
 | Name                                           | Power (W) |
 +------------------------------------------------+-----------+
-| top_level_entity                               |     0.016 |
+| top_level_entity                               |     0.017 |
 |   i_io_logic_entity                            |    <0.001 |
 |   i_memory_control_1_entity                    |     0.008 |
 |     i_rom_mem1                                 |     0.007 |
@@ -181,12 +181,12 @@ Table of Contents
 |                 prim_init.ram                  |    <0.001 |
 |               ramloop[23].ram.r                |    <0.001 |
 |                 prim_init.ram                  |    <0.001 |
-|               ramloop[2].ram.r                 |    <0.001 |
-|                 prim_init.ram                  |    <0.001 |
+|               ramloop[2].ram.r                 |     0.001 |
+|                 prim_init.ram                  |     0.001 |
 |               ramloop[3].ram.r                 |    <0.001 |
 |                 prim_init.ram                  |    <0.001 |
-|               ramloop[4].ram.r                 |    <0.001 |
-|                 prim_init.ram                  |    <0.001 |
+|               ramloop[4].ram.r                 |     0.001 |
+|                 prim_init.ram                  |     0.001 |
 |               ramloop[5].ram.r                 |    <0.001 |
 |                 prim_init.ram                  |    <0.001 |
 |               ramloop[6].ram.r                 |    <0.001 |
@@ -218,7 +218,7 @@ Table of Contents
 |   i_patterngenerator_1_entity                  |    <0.001 |
 |   i_patterngenerator_2_entity                  |    <0.001 |
 |   i_prescaler_entity                           |    <0.001 |
-|   i_source_multiplexer_entity                  |     0.002 |
+|   i_source_multiplexer_entity                  |     0.001 |
 |   i_vga_control_entity                         |    <0.001 |
 +------------------------------------------------+-----------+
 

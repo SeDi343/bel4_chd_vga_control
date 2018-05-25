@@ -16,8 +16,6 @@ architecture source_multiplexer_architecture of source_multiplexer_entity is
 	type t_state	is (BACKGROUND, OBJECT);
 
 	constant OSIZE				: integer := 100;									-- Object Size
-	constant HSIZE				: integer := 800;									-- Width
-	constant VSIZE				: integer := 525;									-- Height
 
 	signal s_rgb					: std_logic_vector(11 downto 0);	-- Internal Signal for the RGB
 	signal s_pbstate_l		: std_logic_vector(1 downto 0);		-- Button state BTNL (press and release Button)
@@ -28,11 +26,9 @@ architecture source_multiplexer_architecture of source_multiplexer_entity is
 	signal s_y_dir				: integer;												-- Y Direction
 	signal s_switch				: std_logic;											-- Switch between Background and Object
 	signal s_activate			: std_logic;											-- Activate Countering of Memory 2
-	signal s_change				: std_logic;											-- Position has been changed, for memcontrol
 	signal s_state				: t_state;												-- Switch between Background and Object state
 
 begin
-
 
 	-----------------------------------------------------------------------------
 	-- Use one RGB Source for Output
@@ -112,74 +108,70 @@ begin
 			s_y_dir <= 180;
 
 		elsif clk_i'event and clk_i = '1' then
-			s_change <= '0';
-
-			if s_switch = '0' then
-				-- If Button BTNL is pressed
-				if pbsync_i = "1000" and s_pbstate_l = "00" then
-					s_pbstate_l <= "01";
-				end if;
-				if pbsync_i = "0000" and s_pbstate_l = "01" then
-					s_pbstate_l <= "11";
-				end if;
-				if s_pbstate_l = "11" then
-					s_pbstate_l <= "00";
-					-- Move moving Object on X Axis 30px to the left
-					v_temp_dir := s_x_dir;
-					if v_temp_dir - 30 > 0 then
-						s_x_dir <= s_x_dir - 30;
-						s_change <= '1';
+			if change_i = '1' then
+				if s_switch = '0' then
+					-- If Button BTNL is pressed
+					if pbsync_i = "1000" and s_pbstate_l = "00" then
+						s_pbstate_l <= "01";
 					end if;
-				end if;
-
-				-- If Button BTNR is pressed
-				if pbsync_i = "0100" and s_pbstate_r = "00" then
-					s_pbstate_r <= "01";
-				end if;
-				if pbsync_i = "0000" and s_pbstate_r = "01" then
-					s_pbstate_r <= "11";
-				end if;
-				if s_pbstate_r = "11" then
-					s_pbstate_r <= "00";
-					-- Move moving Object on X Axis 30px to the right
-					v_temp_dir := s_x_dir;
-					if v_temp_dir + OSIZE + 30 < 640 then
-						s_x_dir <= s_x_dir + 30;
-						s_change <= '1';
+					if pbsync_i = "0000" and s_pbstate_l = "01" then
+						s_pbstate_l <= "11";
 					end if;
-				end if;
-
-				-- If Button BTNU is pressed
-				if pbsync_i = "0010" and s_pbstate_u = "00" then
-					s_pbstate_u <= "01";
-				end if;
-				if pbsync_i = "0000" and s_pbstate_u = "01" then
-					s_pbstate_u <= "11";
-				end if;
-				if s_pbstate_u = "11" then
-					s_pbstate_u <= "00";
-					-- Move moving Object on Y Axis 30px up
-					v_temp_dir := s_y_dir;
-					if v_temp_dir - 30 > 0 then
-						s_y_dir <= s_y_dir - 30;
-						s_change <= '1';
+					if s_pbstate_l = "11" then
+						s_pbstate_l <= "00";
+						-- Move moving Object on X Axis 30px to the left
+						v_temp_dir := s_x_dir;
+						if v_temp_dir - 30 > 0 then
+							s_x_dir <= s_x_dir - 30;
+						end if;
 					end if;
-				end if;
 
-				-- If Button BTND is pressed
-				if pbsync_i = "0001" and s_pbstate_d = "00" then
-					s_pbstate_d <= "01";
-				end if;
-				if pbsync_i = "0000" and s_pbstate_d = "01" then
-					s_pbstate_d <= "11";
-				end if;
-				if s_pbstate_d = "11" then
-					s_pbstate_d <= "00";
-					-- Move moving Object on Y Axis 30px down
-					v_temp_dir := s_y_dir;
-					if v_temp_dir + OSIZE + 30 < 480 then
-						s_y_dir <= s_y_dir + 30;
-						s_change <= '1';
+					-- If Button BTNR is pressed
+					if pbsync_i = "0100" and s_pbstate_r = "00" then
+						s_pbstate_r <= "01";
+					end if;
+					if pbsync_i = "0000" and s_pbstate_r = "01" then
+						s_pbstate_r <= "11";
+					end if;
+					if s_pbstate_r = "11" then
+						s_pbstate_r <= "00";
+						-- Move moving Object on X Axis 30px to the right
+						v_temp_dir := s_x_dir;
+						if v_temp_dir + OSIZE + 30 < 640 then
+							s_x_dir <= s_x_dir + 30;
+						end if;
+					end if;
+
+					-- If Button BTNU is pressed
+					if pbsync_i = "0010" and s_pbstate_u = "00" then
+						s_pbstate_u <= "01";
+					end if;
+					if pbsync_i = "0000" and s_pbstate_u = "01" then
+						s_pbstate_u <= "11";
+					end if;
+					if s_pbstate_u = "11" then
+						s_pbstate_u <= "00";
+						-- Move moving Object on Y Axis 30px up
+						v_temp_dir := s_y_dir;
+						if v_temp_dir - 30 > 0 then
+							s_y_dir <= s_y_dir - 30;
+						end if;
+					end if;
+
+					-- If Button BTND is pressed
+					if pbsync_i = "0001" and s_pbstate_d = "00" then
+						s_pbstate_d <= "01";
+					end if;
+					if pbsync_i = "0000" and s_pbstate_d = "01" then
+						s_pbstate_d <= "11";
+					end if;
+					if s_pbstate_d = "11" then
+						s_pbstate_d <= "00";
+						-- Move moving Object on Y Axis 30px down
+						v_temp_dir := s_y_dir;
+						if v_temp_dir + OSIZE + 30 < 480 then
+							s_y_dir <= s_y_dir + 30;
+						end if;
 					end if;
 				end if;
 			end if;
@@ -188,5 +180,4 @@ begin
 
 	rgb_o <= s_rgb;					-- Write defined pattern RGB input to RGB output
 	object_o <= s_activate;	-- Switch between Background and Object
-	change_o <= s_change;		-- Connect the change state with output
 end source_multiplexer_architecture;

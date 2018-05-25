@@ -14,9 +14,9 @@ Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 26580 
+INFO: Helper process launched with PID 22720 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1116.895 ; gain = 125.078 ; free physical = 6305 ; free virtual = 28422
+Starting RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1116.898 ; gain = 125.078 ; free physical = 6096 ; free virtual = 28201
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-638] synthesizing module 'top_level_entity' [/home/fedora/Dokumente/Schule/Fachhochschule/Semester_4/Chip_Design/Project_VGA_Controller/code/vhdl/top_level_architecture.vhd:13]
 INFO: [Synth 8-3491] module 'prescaler_entity' declared at '/home/fedora/Dokumente/Schule/Fachhochschule/Semester_4/Chip_Design/Project_VGA_Controller/code/vhdl/prescaler_entity.vhd:12' bound to instance 'i_prescaler_entity' of component 'prescaler_entity' [/home/fedora/Dokumente/Schule/Fachhochschule/Semester_4/Chip_Design/Project_VGA_Controller/code/vhdl/top_level_architecture.vhd:138]
@@ -39,17 +39,17 @@ INFO: [Synth 8-638] synthesizing module 'patterngenerator_2_entity' [/home/fedor
 INFO: [Synth 8-256] done synthesizing module 'patterngenerator_2_entity' (6#1) [/home/fedora/Dokumente/Schule/Fachhochschule/Semester_4/Chip_Design/Project_VGA_Controller/code/vhdl/patterngenerator_2_architecture.vhd:14]
 INFO: [Synth 8-3491] module 'memory_control_1_entity' declared at '/home/fedora/Dokumente/Schule/Fachhochschule/Semester_4/Chip_Design/Project_VGA_Controller/code/vhdl/memory_control_1_entity.vhd:12' bound to instance 'i_memory_control_1_entity' of component 'memory_control_1_entity' [/home/fedora/Dokumente/Schule/Fachhochschule/Semester_4/Chip_Design/Project_VGA_Controller/code/vhdl/top_level_architecture.vhd:190]
 INFO: [Synth 8-638] synthesizing module 'memory_control_1_entity' [/home/fedora/Dokumente/Schule/Fachhochschule/Semester_4/Chip_Design/Project_VGA_Controller/code/vhdl/memory_control_1_architecture.vhd:13]
-INFO: [Synth 8-3491] module 'rom_mem1' declared at '/home/fedora/Dokumente/Schule/Fachhochschule/Semester_4/Chip_Design/Project_VGA_Controller/code/impl/vga_controller/vga_controller.runs/synth_1/.Xil/Vivado-26573-fedora/realtime/rom_mem1_stub.vhdl:5' bound to instance 'i_rom_mem1' of component 'rom_mem1' [/home/fedora/Dokumente/Schule/Fachhochschule/Semester_4/Chip_Design/Project_VGA_Controller/code/vhdl/memory_control_1_architecture.vhd:33]
-INFO: [Synth 8-638] synthesizing module 'rom_mem1' [/home/fedora/Dokumente/Schule/Fachhochschule/Semester_4/Chip_Design/Project_VGA_Controller/code/impl/vga_controller/vga_controller.runs/synth_1/.Xil/Vivado-26573-fedora/realtime/rom_mem1_stub.vhdl:14]
+INFO: [Synth 8-3491] module 'rom_mem1' declared at '/home/fedora/Dokumente/Schule/Fachhochschule/Semester_4/Chip_Design/Project_VGA_Controller/code/impl/vga_controller/vga_controller.runs/synth_1/.Xil/Vivado-22714-fedora/realtime/rom_mem1_stub.vhdl:5' bound to instance 'i_rom_mem1' of component 'rom_mem1' [/home/fedora/Dokumente/Schule/Fachhochschule/Semester_4/Chip_Design/Project_VGA_Controller/code/vhdl/memory_control_1_architecture.vhd:33]
+INFO: [Synth 8-638] synthesizing module 'rom_mem1' [/home/fedora/Dokumente/Schule/Fachhochschule/Semester_4/Chip_Design/Project_VGA_Controller/code/impl/vga_controller/vga_controller.runs/synth_1/.Xil/Vivado-22714-fedora/realtime/rom_mem1_stub.vhdl:14]
 INFO: [Synth 8-256] done synthesizing module 'memory_control_1_entity' (7#1) [/home/fedora/Dokumente/Schule/Fachhochschule/Semester_4/Chip_Design/Project_VGA_Controller/code/vhdl/memory_control_1_architecture.vhd:13]
 INFO: [Synth 8-3491] module 'memory_control_2_entity' declared at '/home/fedora/Dokumente/Schule/Fachhochschule/Semester_4/Chip_Design/Project_VGA_Controller/code/vhdl/memory_control_2_entity.vhd:12' bound to instance 'i_memory_control_2_entity' of component 'memory_control_2_entity' [/home/fedora/Dokumente/Schule/Fachhochschule/Semester_4/Chip_Design/Project_VGA_Controller/code/vhdl/top_level_architecture.vhd:198]
 INFO: [Synth 8-638] synthesizing module 'memory_control_2_entity' [/home/fedora/Dokumente/Schule/Fachhochschule/Semester_4/Chip_Design/Project_VGA_Controller/code/vhdl/memory_control_2_architecture.vhd:13]
-INFO: [Synth 8-3491] module 'rom_mem2' declared at '/home/fedora/Dokumente/Schule/Fachhochschule/Semester_4/Chip_Design/Project_VGA_Controller/code/impl/vga_controller/vga_controller.runs/synth_1/.Xil/Vivado-26573-fedora/realtime/rom_mem2_stub.vhdl:5' bound to instance 'i_rom_mem2' of component 'rom_mem2' [/home/fedora/Dokumente/Schule/Fachhochschule/Semester_4/Chip_Design/Project_VGA_Controller/code/vhdl/memory_control_2_architecture.vhd:31]
-INFO: [Synth 8-638] synthesizing module 'rom_mem2' [/home/fedora/Dokumente/Schule/Fachhochschule/Semester_4/Chip_Design/Project_VGA_Controller/code/impl/vga_controller/vga_controller.runs/synth_1/.Xil/Vivado-26573-fedora/realtime/rom_mem2_stub.vhdl:14]
+INFO: [Synth 8-3491] module 'rom_mem2' declared at '/home/fedora/Dokumente/Schule/Fachhochschule/Semester_4/Chip_Design/Project_VGA_Controller/code/impl/vga_controller/vga_controller.runs/synth_1/.Xil/Vivado-22714-fedora/realtime/rom_mem2_stub.vhdl:5' bound to instance 'i_rom_mem2' of component 'rom_mem2' [/home/fedora/Dokumente/Schule/Fachhochschule/Semester_4/Chip_Design/Project_VGA_Controller/code/vhdl/memory_control_2_architecture.vhd:32]
+INFO: [Synth 8-638] synthesizing module 'rom_mem2' [/home/fedora/Dokumente/Schule/Fachhochschule/Semester_4/Chip_Design/Project_VGA_Controller/code/impl/vga_controller/vga_controller.runs/synth_1/.Xil/Vivado-22714-fedora/realtime/rom_mem2_stub.vhdl:14]
 INFO: [Synth 8-256] done synthesizing module 'memory_control_2_entity' (8#1) [/home/fedora/Dokumente/Schule/Fachhochschule/Semester_4/Chip_Design/Project_VGA_Controller/code/vhdl/memory_control_2_architecture.vhd:13]
 INFO: [Synth 8-256] done synthesizing module 'top_level_entity' (9#1) [/home/fedora/Dokumente/Schule/Fachhochschule/Semester_4/Chip_Design/Project_VGA_Controller/code/vhdl/top_level_architecture.vhd:13]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1161.332 ; gain = 169.516 ; free physical = 6261 ; free virtual = 28375
+Finished RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 1161.336 ; gain = 169.516 ; free physical = 6009 ; free virtual = 28132
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -59,19 +59,19 @@ Report Check Netlist:
 |1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
 +------+------------------+-------+---------+-------+------------------+
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 1161.332 ; gain = 169.516 ; free physical = 6261 ; free virtual = 28375
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 1161.336 ; gain = 169.516 ; free physical = 6008 ; free virtual = 28132
 ---------------------------------------------------------------------------------
 WARNING: [Project 1-486] Could not resolve non-primitive black box cell 'rom_mem1' instantiated as 'i_memory_control_1_entity/i_rom_mem1' [/home/fedora/Dokumente/Schule/Fachhochschule/Semester_4/Chip_Design/Project_VGA_Controller/code/vhdl/memory_control_1_architecture.vhd:33]
-WARNING: [Project 1-486] Could not resolve non-primitive black box cell 'rom_mem2' instantiated as 'i_memory_control_2_entity/i_rom_mem2' [/home/fedora/Dokumente/Schule/Fachhochschule/Semester_4/Chip_Design/Project_VGA_Controller/code/vhdl/memory_control_2_architecture.vhd:31]
+WARNING: [Project 1-486] Could not resolve non-primitive black box cell 'rom_mem2' instantiated as 'i_memory_control_2_entity/i_rom_mem2' [/home/fedora/Dokumente/Schule/Fachhochschule/Semester_4/Chip_Design/Project_VGA_Controller/code/vhdl/memory_control_2_architecture.vhd:32]
 INFO: [Device 21-403] Loading part xc7a35tcpg236-1
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
 Initializing timing engine
-Parsing XDC File [/home/fedora/Dokumente/Schule/Fachhochschule/Semester_4/Chip_Design/Project_VGA_Controller/code/impl/vga_controller/vga_controller.runs/synth_1/.Xil/Vivado-26573-fedora/dcp/rom_mem1_in_context.xdc] for cell 'i_memory_control_1_entity/i_rom_mem1'
-Finished Parsing XDC File [/home/fedora/Dokumente/Schule/Fachhochschule/Semester_4/Chip_Design/Project_VGA_Controller/code/impl/vga_controller/vga_controller.runs/synth_1/.Xil/Vivado-26573-fedora/dcp/rom_mem1_in_context.xdc] for cell 'i_memory_control_1_entity/i_rom_mem1'
-Parsing XDC File [/home/fedora/Dokumente/Schule/Fachhochschule/Semester_4/Chip_Design/Project_VGA_Controller/code/impl/vga_controller/vga_controller.runs/synth_1/.Xil/Vivado-26573-fedora/dcp_2/rom_mem2_in_context.xdc] for cell 'i_memory_control_2_entity/i_rom_mem2'
-Finished Parsing XDC File [/home/fedora/Dokumente/Schule/Fachhochschule/Semester_4/Chip_Design/Project_VGA_Controller/code/impl/vga_controller/vga_controller.runs/synth_1/.Xil/Vivado-26573-fedora/dcp_2/rom_mem2_in_context.xdc] for cell 'i_memory_control_2_entity/i_rom_mem2'
+Parsing XDC File [/home/fedora/Dokumente/Schule/Fachhochschule/Semester_4/Chip_Design/Project_VGA_Controller/code/impl/vga_controller/vga_controller.runs/synth_1/.Xil/Vivado-22714-fedora/dcp/rom_mem1_in_context.xdc] for cell 'i_memory_control_1_entity/i_rom_mem1'
+Finished Parsing XDC File [/home/fedora/Dokumente/Schule/Fachhochschule/Semester_4/Chip_Design/Project_VGA_Controller/code/impl/vga_controller/vga_controller.runs/synth_1/.Xil/Vivado-22714-fedora/dcp/rom_mem1_in_context.xdc] for cell 'i_memory_control_1_entity/i_rom_mem1'
+Parsing XDC File [/home/fedora/Dokumente/Schule/Fachhochschule/Semester_4/Chip_Design/Project_VGA_Controller/code/impl/vga_controller/vga_controller.runs/synth_1/.Xil/Vivado-22714-fedora/dcp_2/rom_mem2_in_context.xdc] for cell 'i_memory_control_2_entity/i_rom_mem2'
+Finished Parsing XDC File [/home/fedora/Dokumente/Schule/Fachhochschule/Semester_4/Chip_Design/Project_VGA_Controller/code/impl/vga_controller/vga_controller.runs/synth_1/.Xil/Vivado-22714-fedora/dcp_2/rom_mem2_in_context.xdc] for cell 'i_memory_control_2_entity/i_rom_mem2'
 Parsing XDC File [/home/fedora/Dokumente/Schule/Fachhochschule/Semester_4/Chip_Design/Project_VGA_Controller/code/impl/vga_controller/vga_controller.srcs/constrs_1/new/vga_controller_constrs.xdc]
 Finished Parsing XDC File [/home/fedora/Dokumente/Schule/Fachhochschule/Semester_4/Chip_Design/Project_VGA_Controller/code/impl/vga_controller/vga_controller.srcs/constrs_1/new/vga_controller_constrs.xdc]
 INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/home/fedora/Dokumente/Schule/Fachhochschule/Semester_4/Chip_Design/Project_VGA_Controller/code/impl/vga_controller/vga_controller.srcs/constrs_1/new/vga_controller_constrs.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/top_level_entity_propImpl.xdc].
@@ -81,31 +81,32 @@ Completed Processing XDC Constraints
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 1490.848 ; gain = 0.000 ; free physical = 6093 ; free virtual = 28207
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1490.844 ; gain = 0.000 ; free physical = 5855 ; free virtual = 27963
 WARNING: [Timing 38-316] Clock period '20.000' specified during out-of-context synthesis of instance 'i_memory_control_1_entity/i_rom_mem1' at clock pin 'clka' is different from the actual clock period '10.000', this can result in different synthesis results.
 WARNING: [Timing 38-316] Clock period '20.000' specified during out-of-context synthesis of instance 'i_memory_control_2_entity/i_rom_mem2' at clock pin 'clka' is different from the actual clock period '10.000', this can result in different synthesis results.
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:14 ; elapsed = 00:00:14 . Memory (MB): peak = 1490.848 ; gain = 499.031 ; free physical = 6131 ; free virtual = 28242
+Finished Constraint Validation : Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 1490.844 ; gain = 499.023 ; free physical = 5861 ; free virtual = 27972
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a35tcpg236-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:14 ; elapsed = 00:00:14 . Memory (MB): peak = 1490.848 ; gain = 499.031 ; free physical = 6131 ; free virtual = 28242
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 1490.844 ; gain = 499.023 ; free physical = 5861 ; free virtual = 27972
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:14 ; elapsed = 00:00:14 . Memory (MB): peak = 1490.848 ; gain = 499.031 ; free physical = 6131 ; free virtual = 28242
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 1490.844 ; gain = 499.023 ; free physical = 5861 ; free virtual = 27972
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-5544] ROM "s_25mhz" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
 INFO: [Synth 8-5546] ROM "s_500hzen" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "s_enctr_v_sync" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5544] ROM "s_rgb" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5546] ROM "s_change" won't be mapped to RAM because it is too sparse
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:15 ; elapsed = 00:00:15 . Memory (MB): peak = 1490.848 ; gain = 499.031 ; free physical = 6116 ; free virtual = 28226
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:17 ; elapsed = 00:00:17 . Memory (MB): peak = 1490.844 ; gain = 499.023 ; free physical = 5846 ; free virtual = 27956
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -121,12 +122,14 @@ Detailed RTL Component Info :
 	   2 Input     32 Bit       Adders := 6     
 	   2 Input     18 Bit       Adders := 1     
 	   2 Input     17 Bit       Adders := 1     
+	   2 Input     14 Bit       Adders := 1     
 	   2 Input     11 Bit       Adders := 5     
 	   2 Input     10 Bit       Adders := 2     
 	   2 Input      2 Bit       Adders := 1     
 +---Registers : 
 	               18 Bit    Registers := 1     
 	               17 Bit    Registers := 2     
+	               14 Bit    Registers := 1     
 	               12 Bit    Registers := 6     
 	               10 Bit    Registers := 2     
 	                4 Bit    Registers := 3     
@@ -137,6 +140,7 @@ Detailed RTL Component Info :
 	   2 Input     32 Bit        Muxes := 2     
 	   2 Input     18 Bit        Muxes := 1     
 	   2 Input     17 Bit        Muxes := 2     
+	   2 Input     14 Bit        Muxes := 1     
 	   2 Input     12 Bit        Muxes := 158   
 	   4 Input     12 Bit        Muxes := 1     
 	   5 Input     12 Bit        Muxes := 5     
@@ -145,7 +149,7 @@ Detailed RTL Component Info :
 	   2 Input      4 Bit        Muxes := 1     
 	   2 Input      2 Bit        Muxes := 5     
 	   4 Input      2 Bit        Muxes := 1     
-	   2 Input      1 Bit        Muxes := 152   
+	   2 Input      1 Bit        Muxes := 149   
 	  10 Input      1 Bit        Muxes := 1     
 	  11 Input      1 Bit        Muxes := 5     
 	   4 Input      1 Bit        Muxes := 2     
@@ -199,13 +203,13 @@ Detailed RTL Component Info :
 +---Registers : 
 	               12 Bit    Registers := 1     
 	                2 Bit    Registers := 4     
-	                1 Bit    Registers := 4     
+	                1 Bit    Registers := 3     
 +---Muxes : 
 	   2 Input     32 Bit        Muxes := 2     
 	   2 Input     12 Bit        Muxes := 2     
 	   4 Input     12 Bit        Muxes := 1     
 	   2 Input      2 Bit        Muxes := 4     
-	   2 Input      1 Bit        Muxes := 21    
+	   2 Input      1 Bit        Muxes := 17    
 Module patterngenerator_1_entity 
 Detailed RTL Component Info : 
 +---Registers : 
@@ -239,8 +243,15 @@ Detailed RTL Component Info :
 	   4 Input      1 Bit        Muxes := 2     
 Module memory_control_2_entity 
 Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     14 Bit       Adders := 1     
 +---Registers : 
+	               14 Bit    Registers := 1     
 	               12 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input     14 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 1     
 ---------------------------------------------------------------------------------
 Finished RTL Hierarchical Component Statistics
 ---------------------------------------------------------------------------------
@@ -253,17 +264,18 @@ BRAMs: 100 (col length: RAMB18 60 RAMB36 30)
 ---------------------------------------------------------------------------------
 Finished Part Resource Summary
 ---------------------------------------------------------------------------------
-Start Parallel Synthesis Optimization  : Time (s): cpu = 00:00:15 ; elapsed = 00:00:15 . Memory (MB): peak = 1490.848 ; gain = 499.031 ; free physical = 6116 ; free virtual = 28226
+Start Parallel Synthesis Optimization  : Time (s): cpu = 00:00:17 ; elapsed = 00:00:18 . Memory (MB): peak = 1490.844 ; gain = 499.023 ; free physical = 5846 ; free virtual = 27956
 ---------------------------------------------------------------------------------
 Start Cross Boundary Optimization
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-5546] ROM "i_io_logic_entity/s_500hzen" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "i_vga_control_entity/s_enctr_v_sync" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "p_0_out" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "i_memory_control_2_entity/s_change" won't be mapped to RAM because it is too sparse
 ---------------------------------------------------------------------------------
-Finished Cross Boundary Optimization : Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 1490.848 ; gain = 499.031 ; free physical = 6116 ; free virtual = 28226
+Finished Cross Boundary Optimization : Time (s): cpu = 00:00:18 ; elapsed = 00:00:18 . Memory (MB): peak = 1490.844 ; gain = 499.023 ; free physical = 5846 ; free virtual = 27956
 ---------------------------------------------------------------------------------
-Finished Parallel Reinference  : Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 1490.848 ; gain = 499.031 ; free physical = 6116 ; free virtual = 28226
+Finished Parallel Reinference  : Time (s): cpu = 00:00:18 ; elapsed = 00:00:18 . Memory (MB): peak = 1490.844 ; gain = 499.023 ; free physical = 5846 ; free virtual = 27956
 
 Report RTL Partitions: 
 +-+--------------+------------+----------+
@@ -310,9 +322,9 @@ WARNING: [Synth 8-3332] Sequential element (i_patterngenerator_1_entity/s_rgb_re
 WARNING: [Synth 8-3332] Sequential element (i_patterngenerator_1_entity/s_rgb_reg[1]) is unused and will be removed from module top_level_entity.
 WARNING: [Synth 8-3332] Sequential element (i_patterngenerator_1_entity/s_rgb_reg[0]) is unused and will be removed from module top_level_entity.
 ---------------------------------------------------------------------------------
-Finished Area Optimization : Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 1490.848 ; gain = 499.031 ; free physical = 6085 ; free virtual = 28195
+Finished Area Optimization : Time (s): cpu = 00:00:21 ; elapsed = 00:00:21 . Memory (MB): peak = 1490.844 ; gain = 499.023 ; free physical = 5806 ; free virtual = 27919
 ---------------------------------------------------------------------------------
-Finished Parallel Area Optimization  : Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 1490.848 ; gain = 499.031 ; free physical = 6085 ; free virtual = 28195
+Finished Parallel Area Optimization  : Time (s): cpu = 00:00:21 ; elapsed = 00:00:21 . Memory (MB): peak = 1490.844 ; gain = 499.023 ; free physical = 5806 ; free virtual = 27919
 
 Report RTL Partitions: 
 +-+--------------+------------+----------+
@@ -326,10 +338,10 @@ Start Timing Optimization
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 1490.848 ; gain = 499.031 ; free physical = 6052 ; free virtual = 28164
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:28 ; elapsed = 00:00:29 . Memory (MB): peak = 1490.844 ; gain = 499.023 ; free physical = 5774 ; free virtual = 27888
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:26 ; elapsed = 00:00:26 . Memory (MB): peak = 1490.848 ; gain = 499.031 ; free physical = 6023 ; free virtual = 28134
+Finished Timing Optimization : Time (s): cpu = 00:00:30 ; elapsed = 00:00:30 . Memory (MB): peak = 1490.844 ; gain = 499.023 ; free physical = 5743 ; free virtual = 27858
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -341,16 +353,16 @@ Report RTL Partitions:
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:26 ; elapsed = 00:00:27 . Memory (MB): peak = 1490.848 ; gain = 499.031 ; free physical = 6015 ; free virtual = 28126
+Finished Technology Mapping : Time (s): cpu = 00:00:30 ; elapsed = 00:00:31 . Memory (MB): peak = 1490.844 ; gain = 499.023 ; free physical = 5726 ; free virtual = 27841
 ---------------------------------------------------------------------------------
-Finished Parallel Technology Mapping Optimization  : Time (s): cpu = 00:00:26 ; elapsed = 00:00:27 . Memory (MB): peak = 1490.848 ; gain = 499.031 ; free physical = 6015 ; free virtual = 28126
+Finished Parallel Technology Mapping Optimization  : Time (s): cpu = 00:00:30 ; elapsed = 00:00:31 . Memory (MB): peak = 1490.844 ; gain = 499.023 ; free physical = 5726 ; free virtual = 27841
 
 Report RTL Partitions: 
 +-+--------------+------------+----------+
 | |RTL Partition |Replication |Instances |
 +-+--------------+------------+----------+
 +-+--------------+------------+----------+
-Finished Parallel Synthesis Optimization  : Time (s): cpu = 00:00:26 ; elapsed = 00:00:27 . Memory (MB): peak = 1490.848 ; gain = 499.031 ; free physical = 6015 ; free virtual = 28126
+Finished Parallel Synthesis Optimization  : Time (s): cpu = 00:00:30 ; elapsed = 00:00:31 . Memory (MB): peak = 1490.844 ; gain = 499.023 ; free physical = 5726 ; free virtual = 27841
 ---------------------------------------------------------------------------------
 Start IO Insertion
 ---------------------------------------------------------------------------------
@@ -367,7 +379,7 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:27 ; elapsed = 00:00:27 . Memory (MB): peak = 1490.848 ; gain = 499.031 ; free physical = 6014 ; free virtual = 28126
+Finished IO Insertion : Time (s): cpu = 00:00:31 ; elapsed = 00:00:31 . Memory (MB): peak = 1490.844 ; gain = 499.023 ; free physical = 5727 ; free virtual = 27842
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -380,7 +392,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:27 ; elapsed = 00:00:27 . Memory (MB): peak = 1490.848 ; gain = 499.031 ; free physical = 6014 ; free virtual = 28126
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:31 ; elapsed = 00:00:31 . Memory (MB): peak = 1490.844 ; gain = 499.023 ; free physical = 5727 ; free virtual = 27842
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -392,25 +404,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:27 ; elapsed = 00:00:27 . Memory (MB): peak = 1490.848 ; gain = 499.031 ; free physical = 6014 ; free virtual = 28126
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:31 ; elapsed = 00:00:31 . Memory (MB): peak = 1490.844 ; gain = 499.023 ; free physical = 5726 ; free virtual = 27841
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:27 ; elapsed = 00:00:27 . Memory (MB): peak = 1490.848 ; gain = 499.031 ; free physical = 6014 ; free virtual = 28126
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:31 ; elapsed = 00:00:31 . Memory (MB): peak = 1490.844 ; gain = 499.023 ; free physical = 5726 ; free virtual = 27841
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:27 ; elapsed = 00:00:27 . Memory (MB): peak = 1490.848 ; gain = 499.031 ; free physical = 6014 ; free virtual = 28126
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:31 ; elapsed = 00:00:31 . Memory (MB): peak = 1490.844 ; gain = 499.023 ; free physical = 5726 ; free virtual = 27841
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:27 ; elapsed = 00:00:27 . Memory (MB): peak = 1490.848 ; gain = 499.031 ; free physical = 6014 ; free virtual = 28126
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:31 ; elapsed = 00:00:31 . Memory (MB): peak = 1490.844 ; gain = 499.023 ; free physical = 5726 ; free virtual = 27841
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -432,12 +444,12 @@ Report Cell Usage:
 |2     |rom_mem2_bbox |     1|
 |3     |BUFG          |     1|
 |4     |CARRY4        |    99|
-|5     |LUT1          |   233|
-|6     |LUT2          |   155|
-|7     |LUT3          |    25|
-|8     |LUT4          |    40|
-|9     |LUT5          |    72|
-|10    |LUT6          |   241|
+|5     |LUT1          |   247|
+|6     |LUT2          |   166|
+|7     |LUT3          |    19|
+|8     |LUT4          |    42|
+|9     |LUT5          |    29|
+|10    |LUT6          |   220|
 |11    |FDCE          |   234|
 |12    |FDPE          |    10|
 |13    |FDRE          |     1|
@@ -449,22 +461,22 @@ Report Instance Areas:
 +------+------------------------------+--------------------------+------+
 |      |Instance                      |Module                    |Cells |
 +------+------------------------------+--------------------------+------+
-|1     |top                           |                          |  1158|
-|2     |  i_io_logic_entity           |io_logic_entity           |   113|
-|3     |  i_memory_control_1_entity   |memory_control_1_entity   |    98|
-|4     |  i_memory_control_2_entity   |memory_control_2_entity   |    68|
-|5     |  i_patterngenerator_1_entity |patterngenerator_1_entity |     6|
-|6     |  i_patterngenerator_2_entity |patterngenerator_2_entity |     6|
+|1     |top                           |                          |  1115|
+|2     |  i_patterngenerator_2_entity |patterngenerator_2_entity |     3|
+|3     |  i_io_logic_entity           |io_logic_entity           |   113|
+|4     |  i_memory_control_1_entity   |memory_control_1_entity   |   111|
+|5     |  i_memory_control_2_entity   |memory_control_2_entity   |    75|
+|6     |  i_patterngenerator_1_entity |patterngenerator_1_entity |     6|
 |7     |  i_prescaler_entity          |prescaler_entity          |     6|
-|8     |  i_source_multiplexer_entity |source_multiplexer_entity |   663|
-|9     |  i_vga_control_entity        |vga_control_entity        |   174|
+|8     |  i_source_multiplexer_entity |source_multiplexer_entity |   636|
+|9     |  i_vga_control_entity        |vga_control_entity        |   141|
 +------+------------------------------+--------------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:27 ; elapsed = 00:00:27 . Memory (MB): peak = 1490.848 ; gain = 499.031 ; free physical = 6014 ; free virtual = 28126
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:31 ; elapsed = 00:00:31 . Memory (MB): peak = 1490.844 ; gain = 499.023 ; free physical = 5726 ; free virtual = 27841
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 18 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 1490.848 ; gain = 82.438 ; free physical = 6014 ; free virtual = 28126
-Synthesis Optimization Complete : Time (s): cpu = 00:00:27 ; elapsed = 00:00:27 . Memory (MB): peak = 1490.848 ; gain = 499.031 ; free physical = 6014 ; free virtual = 28126
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:25 ; elapsed = 00:00:25 . Memory (MB): peak = 1490.844 ; gain = 82.438 ; free physical = 5726 ; free virtual = 27841
+Synthesis Optimization Complete : Time (s): cpu = 00:00:31 ; elapsed = 00:00:31 . Memory (MB): peak = 1490.844 ; gain = 499.023 ; free physical = 5726 ; free virtual = 27841
 INFO: [Project 1-571] Translating synthesized netlist
 INFO: [Netlist 29-17] Analyzing 108 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
@@ -474,8 +486,8 @@ INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
 INFO: [Common 17-83] Releasing license: Synthesis
-67 Infos, 22 Warnings, 0 Critical Warnings and 0 Errors encountered.
+69 Infos, 22 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:27 ; elapsed = 00:00:27 . Memory (MB): peak = 1508.113 ; gain = 441.801 ; free physical = 6016 ; free virtual = 28128
-report_utilization: Time (s): cpu = 00:00:00.04 ; elapsed = 00:00:00.09 . Memory (MB): peak = 1540.129 ; gain = 0.000 ; free physical = 6014 ; free virtual = 28126
-INFO: [Common 17-206] Exiting Vivado at Thu May 24 23:24:08 2018...
+synth_design: Time (s): cpu = 00:00:31 ; elapsed = 00:00:31 . Memory (MB): peak = 1517.023 ; gain = 450.707 ; free physical = 5727 ; free virtual = 27842
+report_utilization: Time (s): cpu = 00:00:00.04 ; elapsed = 00:00:00.08 . Memory (MB): peak = 1549.039 ; gain = 0.000 ; free physical = 5725 ; free virtual = 27840
+INFO: [Common 17-206] Exiting Vivado at Fri May 25 04:17:44 2018...
