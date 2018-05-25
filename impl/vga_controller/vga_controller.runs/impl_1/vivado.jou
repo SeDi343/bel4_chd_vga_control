@@ -2,8 +2,8 @@
 # Vivado v2016.1 (64-bit)
 # SW Build 1538259 on Fri Apr  8 15:45:23 MDT 2016
 # IP Build 1537824 on Fri Apr  8 04:28:57 MDT 2016
-# Start of session at: Fri May 25 04:43:32 2018
-# Process ID: 30521
+# Start of session at: Fri May 25 15:20:34 2018
+# Process ID: 16645
 # Current directory: /home/fedora/Dokumente/Schule/Fachhochschule/Semester_4/Chip_Design/Project_VGA_Controller/code/impl/vga_controller/vga_controller.runs/impl_1
 # Command line: vivado -log top_level_entity.vdi -applog -messageDb vivado.pb -mode batch -source top_level_entity.tcl -notrace
 # Log file: /home/fedora/Dokumente/Schule/Fachhochschule/Semester_4/Chip_Design/Project_VGA_Controller/code/impl/vga_controller/vga_controller.runs/impl_1/top_level_entity.vdi

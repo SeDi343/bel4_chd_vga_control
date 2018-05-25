@@ -1,7 +1,7 @@
 Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2016.1 (lin64) Build 1538259 Fri Apr  8 15:45:23 MDT 2016
-| Date         : Fri May 25 04:44:05 2018
+| Date         : Fri May 25 15:21:02 2018
 | Host         : fedora running 64-bit Fedora release 27 (Twenty Seven)
 | Command      : report_control_sets -verbose -file top_level_entity_control_sets_placed.rpt
 | Design       : top_level_entity
@@ -33,11 +33,11 @@ Table of Contents
 +--------------+-----------------------+------------------------+-----------------+--------------+
 | Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
 +--------------+-----------------------+------------------------+-----------------+--------------+
-| No           | No                    | No                     |              43 |           33 |
-| No           | No                    | Yes                    |              82 |           28 |
+| No           | No                    | No                     |              43 |           32 |
+| No           | No                    | Yes                    |              82 |           29 |
 | No           | Yes                   | No                     |               0 |            0 |
 | Yes          | No                    | No                     |               0 |            0 |
-| Yes          | No                    | Yes                    |             162 |           59 |
+| Yes          | No                    | Yes                    |             162 |           52 |
 | Yes          | Yes                   | No                     |               0 |            0 |
 +--------------+-----------------------+------------------------+-----------------+--------------+
 
@@ -45,22 +45,22 @@ Table of Contents
 3. Detailed Control Set Information
 -----------------------------------
 
-+------------------+---------------------------------------------------+------------------+------------------+----------------+
-|   Clock Signal   |                   Enable Signal                   | Set/Reset Signal | Slice Load Count | Bel Load Count |
-+------------------+---------------------------------------------------+------------------+------------------+----------------+
-|  clk_i_IBUF_BUFG | i_io_logic_entity/pbsync_3[3]_i_1_n_0             | reset_i_IBUF     |                1 |              4 |
-|  clk_i_IBUF_BUFG | i_io_logic_entity/swsync_10                       | reset_i_IBUF     |                4 |              7 |
-|  clk_i_IBUF_BUFG | i_io_logic_entity/s_entpr11_out                   | reset_i_IBUF     |                3 |              7 |
-|  clk_i_IBUF_BUFG | i_prescaler_entity/s_en_25mhz                     | reset_i_IBUF     |                7 |             10 |
-|  clk_i_IBUF_BUFG | i_vga_control_entity/s_enctr_v_sync[9]_i_1_n_0    | reset_i_IBUF     |                7 |             10 |
-|  clk_i_IBUF_BUFG | i_vga_control_entity/s_rgb_reg[11]_4[0]           | reset_i_IBUF     |                5 |             12 |
-|  clk_i_IBUF_BUFG | i_vga_control_entity/E[0]                         | reset_i_IBUF     |                3 |             14 |
-|  clk_i_IBUF_BUFG | i_vga_control_entity/s_rom_current_val_reg[16][0] | reset_i_IBUF     |                7 |             17 |
-|  clk_i_IBUF_BUFG | i_vga_control_entity/s_rom_addr_reg[16][0]        | reset_i_IBUF     |                6 |             17 |
-|  clk_i_IBUF_BUFG | i_source_multiplexer_entity/s_x_dir               | reset_i_IBUF     |                8 |             32 |
-|  clk_i_IBUF_BUFG | i_source_multiplexer_entity/s_y_dir               | reset_i_IBUF     |                8 |             32 |
-|  clk_i_IBUF_BUFG |                                                   |                  |               33 |             43 |
-|  clk_i_IBUF_BUFG |                                                   | reset_i_IBUF     |               28 |             82 |
-+------------------+---------------------------------------------------+------------------+------------------+----------------+
++------------------+------------------------------------------------+------------------+------------------+----------------+
+|   Clock Signal   |                  Enable Signal                 | Set/Reset Signal | Slice Load Count | Bel Load Count |
++------------------+------------------------------------------------+------------------+------------------+----------------+
+|  clk_i_IBUF_BUFG | i_io_logic_entity/pbsync_3[3]_i_1_n_0          | reset_i_IBUF     |                1 |              4 |
+|  clk_i_IBUF_BUFG | i_io_logic_entity/swsync_10                    | reset_i_IBUF     |                2 |              7 |
+|  clk_i_IBUF_BUFG | i_io_logic_entity/s_entpr11_out                | reset_i_IBUF     |                2 |              7 |
+|  clk_i_IBUF_BUFG | i_prescaler_entity/s_en_25mhz                  | reset_i_IBUF     |                3 |             10 |
+|  clk_i_IBUF_BUFG | i_vga_control_entity/s_enctr_v_sync[9]_i_1_n_0 | reset_i_IBUF     |                4 |             10 |
+|  clk_i_IBUF_BUFG | i_source_multiplexer_entity/s_object           | reset_i_IBUF     |                5 |             12 |
+|  clk_i_IBUF_BUFG | i_prescaler_entity/E[0]                        | reset_i_IBUF     |                3 |             14 |
+|  clk_i_IBUF_BUFG | i_vga_control_entity/s_rom_addr_reg[16][0]     | reset_i_IBUF     |                8 |             17 |
+|  clk_i_IBUF_BUFG | i_vga_control_entity/E[0]                      | reset_i_IBUF     |                8 |             17 |
+|  clk_i_IBUF_BUFG | i_source_multiplexer_entity/s_x_dir            | reset_i_IBUF     |                8 |             32 |
+|  clk_i_IBUF_BUFG | i_source_multiplexer_entity/s_y_dir            | reset_i_IBUF     |                8 |             32 |
+|  clk_i_IBUF_BUFG |                                                |                  |               32 |             43 |
+|  clk_i_IBUF_BUFG |                                                | reset_i_IBUF     |               29 |             82 |
++------------------+------------------------------------------------+------------------+------------------+----------------+
 
 
