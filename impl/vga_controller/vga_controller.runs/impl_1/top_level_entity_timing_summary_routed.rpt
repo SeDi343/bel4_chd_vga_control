@@ -1,7 +1,7 @@
 Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2016.1 (lin64) Build 1538259 Fri Apr  8 15:45:23 MDT 2016
-| Date         : Fri May 25 04:18:38 2018
+| Date         : Fri May 25 04:44:24 2018
 | Host         : fedora running 64-bit Fedora release 27 (Twenty Seven)
 | Command      : report_timing_summary -warn_on_violation -max_paths 10 -file top_level_entity_timing_summary_routed.rpt -rpx top_level_entity_timing_summary_routed.rpx
 | Design       : top_level_entity
